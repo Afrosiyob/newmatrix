@@ -1,0 +1,25 @@
+$textColor: rgb(72, 69, 113);
+
+%anim {
+    transition: all 0.2s linear;
+}
+
+%center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+// @extend %anim;
+
+@mixin mQ($arg) {
+    @media only screen and (max-width:$arg) {
+        @content;
+    }
+}
+
+// @include mQ(992px) {
+//     font-size: 42px;
+//     text-align: center;
+// }

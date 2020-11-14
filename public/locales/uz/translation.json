@@ -1,3 +1,12 @@
 {
-  "msg": "salom"
+  "msg": "salom",
+  "homeNavbar": {
+    "home": "Bosh sahifa",
+    "aboute": "Biz haqimizda",
+    "pdfInfo": "PDF-ma'lumotlar",
+    "news": "Yangiliklar",
+    "contacts": "Aloqa",
+    "signIn": "Kirish",
+    "lang": "Til"
+  }
 }
