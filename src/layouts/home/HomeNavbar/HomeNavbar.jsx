@@ -74,8 +74,8 @@ const HomeNavbar = (props) => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#5F2EEA" />
-                <stop offset="0.770833" stop-color="#7586FF" />
-                <stop offset="1" stop-color="#605CFF" />
+                <stop offset="0.770833" stopColor="#7586FF" />
+                <stop offset="1" stopColor="#605CFF" />
               </linearGradient>
               <linearGradient
                 id="paint1_linear"
@@ -86,7 +86,7 @@ const HomeNavbar = (props) => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#057CD3" />
-                <stop offset="1" stop-color="#0295FF" />
+                <stop offset="1" stopColor="#0295FF" />
               </linearGradient>
               <clipPath id="clip0">
                 <rect
