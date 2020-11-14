@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ProvideAuth } from "./components/auth/Auth";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 // import i18n (needs to be bundled ;))
 import "./i18n";
 ReactDOM.render(
@@ -14,9 +16,9 @@ ReactDOM.render(
       <ProvideAuth>
         <Router>
           <App />
-        </Router>
-      </ProvideAuth>
-    </Suspense>
+        </Router>{" "}
+      </ProvideAuth>{" "}
+    </Suspense>{" "}
   </React.StrictMode>,
   document.getElementById("root")
 );

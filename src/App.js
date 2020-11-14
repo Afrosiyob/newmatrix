@@ -29,11 +29,11 @@ function App() {
   // }
   return (
     <div className="App">
+      {" "}
       {/* <AuthButton />
-        <h1> {t(`msg`)} </h1>
-        <Link to="/">Home</Link>
-        <Link to="/admin">Admin</Link> */}
-
+                    <h1> {t(`msg`)} </h1>
+                    <Link to="/">Home</Link>
+                    <Link to="/admin">Admin</Link> */}
       <Routes />
     </div>
   );
