@@ -1,3 +1,32 @@
 .home-about {
     background-color: white;
+    .left-box {
+        display: flex;
+        justify-content: space-between;
+        div {
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                margin-bottom: 15px;
+            }
+        }
+        .left-item-box {
+            width: 50%;
+        }
+        .right-item-box {
+            width: 48%;
+            padding-top: 50px;
+        }
+    }
+    .right-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        // background-color: red;
+        height: 100%;
+        p {
+            color: #6E7191;
+        }
+    }
 }

@@ -1,3 +1,26 @@
+@import "../../../style/AllStyles.scss";
 .home-pdf {
-    background-color: green;
+    background-color: #E8F1FF;
+    position: relative;
+    h1 {
+        color: #2A00A2;
+    }
+    .wrap-box {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+        @include mQ (768px) {
+            flex-direction: column;
+        }
+        .inner-item {
+            position: relative;
+            img {
+                width: 260px;
+                height: auto;
+                margin: 30px 0;
+            }
+        }
+    }
 }
