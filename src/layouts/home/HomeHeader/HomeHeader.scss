@@ -23,14 +23,14 @@
         h1 {
             color: #07003B;
             font-weight: bold;
-            font-size: 64px;
+            font-size: 84px;
             line-height: 66px;
             letter-spacing: 1px;
-            width: 50%;
+            width: 70%;
             line-height: 100%;
             @extend %anim;
             @include mQ(992px) {
-                width: 70%;
+                font-size: 64px;
             }
             @include mQ(768px) {
                 font-size: 42px;
@@ -68,7 +68,9 @@
     .shape-two,
     .shape-three,
     .shape-four,
-    .slider-box {
+    .slider-box,
+    .shape-dots-one,
+    .shape-dots-two {
         position: absolute;
         @extend %anim;
     }
@@ -95,6 +97,17 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: red;
+        // background-color: red;
+        @include mQ(768px) {
+            display: none;
+        }
+    }
+    .shape-dots-one {
+        left: 15%;
+        bottom: 0;
+    }
+    .shape-dots-two {
+        left: 55%;
+        top: 50%;
     }
 }

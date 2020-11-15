@@ -1,0 +1,22 @@
+@import '../../../../style/AllStyles.scss';
+.wrap-slick-slider {
+    width: 400px;
+    height: auto;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    .slider-item {
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        overflow: hidden;
+    }
+    .slick-dots {
+        bottom: 20px;
+    }
+    // .slick-next {
+    //     background-color: red;
+    //     width: 40px;
+    //     height: 40px;
+    //     border-radius: 50%;
+    //     @extend %center;
+    // }
+}

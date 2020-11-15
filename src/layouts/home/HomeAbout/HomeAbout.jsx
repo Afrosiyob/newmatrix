@@ -2,40 +2,21 @@ import React from "react";
 
 import "./HomeAbout.scss";
 
+import { Col, Container, Row } from "reactstrap";
+
 function HomeAbout() {
   return (
-    <div className="home-about" id="section2">
-      <h1>this is home aboute</h1>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2 > hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
-      <h2> hello world </h2>
+    <div className="home-about my-5" id="section2">
+      <Container>
+        <Row>
+          <Col sm="12" md="6">
+            wefew
+          </Col>
+          <Col sm="12" md="6">
+            wefwe
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
