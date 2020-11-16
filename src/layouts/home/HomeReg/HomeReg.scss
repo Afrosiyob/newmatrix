@@ -1,4 +1,59 @@
+@import '../../../style/AllStyles.scss';
 .home-reg {
     background-color: white;
     position: relative;
+    .left-box {
+        h1 {
+            color: #5F2EEA;
+            font-size: 48px;
+            font-weight: bold;
+        }
+        h3 {
+            color: #2A00A2;
+            font-size: 32px;
+        }
+    }
+    .right-box {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        align-content: center;
+        @extend %anim;
+        button.header-btn {
+            background-color: transparent;
+            border: 2px solid #2A00A2;
+            box-sizing: border-box;
+            outline: none;
+            color: #2A00A2;
+            @extend %anim;
+            font-size: 16px;
+            font-weight: bolder;
+            &:hover {
+                background-color: #2A00A2;
+                color: white;
+            }
+        }
+        @include mQ(768px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    .back-text {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #07003B;
+        opacity: 0.05;
+        font-weight: bold;
+        font-size: 74px;
+        width: 100%;
+        text-align: center;
+        @extend %anim;
+        @include mQ(768px) {
+            font-size: 54px;
+        }
+    }
 }

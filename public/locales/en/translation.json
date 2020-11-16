@@ -1,13 +1,16 @@
 {
-  "msg": "hello",
+    "msg": "hello",
 
-  "homeNavbar": {
-    "home": "Home",
-    "aboute": "About",
-    "pdfInfo": "PDF-materials",
-    "news": "News",
-    "contacts": "Contact",
-    "signIn": "Sign In",
-    "lang": "Lang"
-  }
+    "homeNavbar": {
+        "home": "Home",
+        "aboute": "About",
+        "pdfInfo": "PDF-materials",
+        "news": "News",
+        "contacts": "Contact",
+        "signIn": "Sign In",
+        "lang": "Lang"
+    }
+
+
+
 }

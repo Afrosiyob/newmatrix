@@ -10,13 +10,13 @@ function Routes() {
     <Switch>
       <Route path="/" exact>
         <Home />
-      </Route>
+      </Route>{" "}
       <Route path="/login">
         <LoginPage />
-      </Route>
+      </Route>{" "}
       <PrivateRoute path="/admin" exact>
         <Admin />
-      </PrivateRoute>
+      </PrivateRoute>{" "}
     </Switch>
   );
 }

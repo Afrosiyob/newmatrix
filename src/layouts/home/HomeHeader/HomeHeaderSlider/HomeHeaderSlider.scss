@@ -1,13 +1,18 @@
 @import '../../../../style/AllStyles.scss';
 .wrap-slick-slider {
-    width: 400px;
-    height: auto;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
+    max-width: 350px;
+    width: 100%;
+    height: 200px;
     .slider-item {
         border-top-left-radius: 50px;
         border-top-right-radius: 50px;
         overflow: hidden;
+        img {
+            width: 100%;
+            height: auto;
+        }
     }
     .slick-dots {
         bottom: 20px;
