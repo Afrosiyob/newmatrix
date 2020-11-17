@@ -8,7 +8,7 @@ import { PrivateRoute } from "./PrivateRoute";
 function Routes() {
   return (
     <Switch>
-      <Route path="/" exact>
+      <Route path={["/", "/verify/:id/:token"]} exact>
         <Home />
       </Route>{" "}
       <Route path="/login">

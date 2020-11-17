@@ -78,11 +78,8 @@ function SignUp() {
                 }, 2000);
               })
               .catch((error) => {
-                console.log("====================================");
-                console.log(error.response.data);
-                console.log("====================================");
-                // console.error("There was an error!", error.response.data);
-                // console.error("There was an error!", error.request);
+                console.error("There was an error!", error.response.data);
+                console.error("There was an error!", error.request);
               });
           }, 400);
         }}
