@@ -32,24 +32,24 @@ function SignIn() {
             alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
 
-            const formData = new FormData();
-            formData.append("username", values.userName);
-            formData.append("password", values.password);
+            // const formData = new FormData();
+            // formData.append("username", values.userName);
+            // formData.append("password", values.password);
 
-            const url = "http://caa54ab54a60.ngrok.io/api/login/";
-            // const config = {
-            //   headers: {
-            //     Authorization: "Bearer my-token",
-            //     "My-Custom-Header": "foobar",
-            //   },
-            // };
+            // const url = "http://caa54ab54a60.ngrok.io/api/login/";
+            // // const config = {
+            // //   headers: {
+            // //     Authorization: "Bearer my-token",
+            // //     "My-Custom-Header": "foobar",
+            // //   },
+            // // };
 
-            axios
-              .post(url, formData)
-              .then((response) => console.log(response))
-              .catch((error) => {
-                console.error("There was an error!", error);
-              });
+            // axios
+            //   .post(url, formData)
+            //   .then((response) => console.log(response))
+            //   .catch((error) => {
+            //     console.error("There was an error!", error);
+            //   });
           }, 400);
         }}
       >

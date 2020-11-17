@@ -45,7 +45,7 @@ function SignUp() {
         // }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            // alert(JSON.stringify(values, null, 2));
+            alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
 
             const formData = new FormData();
@@ -57,7 +57,7 @@ function SignUp() {
             formData.append("phone", values.phone);
             formData.append("parent_username", values.partner);
 
-            const url = "http://caa54ab54a60.ngrok.io/api/register/";
+            const url = "http://0354238911ac.ngrok.io/api/register/";
             // const config = {
             //   headers: {
             //     Authorization: "Bearer my-token",
@@ -78,16 +78,10 @@ function SignUp() {
                 }, 2000);
               })
               .catch((error) => {
-                console.error("There was an error!", error.response.data);
-
-                if (error.response.data) {
-                  setVisible(true);
-                  setAlertColor("danger");
-                  setAlertmessage(
-                    "Bunday malumotlar bor jinni boshqatdan kirit"
-                  );
-                }
-
+                console.log("====================================");
+                console.log(error.response.data);
+                console.log("====================================");
+                // console.error("There was an error!", error.response.data);
                 // console.error("There was an error!", error.request);
               });
           }, 400);
