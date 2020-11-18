@@ -7,7 +7,7 @@ import HomeHeader from "../../layouts/home/HomeHeader/HomeHeader";
 import HomeNavbar from "../../layouts/home/HomeNavbar/HomeNavbar";
 import HomePdf from "../../layouts/home/HomePdf/HomePdf";
 import HomeReg from "../../layouts/home/HomeReg/HomeReg";
-
+import { ToastContainer, toast } from "react-toastify";
 import "./Home.scss";
 
 function Home(props) {
@@ -18,6 +18,26 @@ function Home(props) {
   console.log("====================================");
   console.log("token = " + token);
   console.log("====================================");
+  const notify = () =>
+    toast.success(" Siz ro'yxatdan o'tdingiz !", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  const notifyWaring = () =>
+    toast.warn(" Bu foydalanuvchi ro'yxatdan o'tgan ! ", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
   useEffect(() => {
     const formData = new FormData();
@@ -25,17 +45,30 @@ function Home(props) {
     formData.append("id", id);
     formData.append("token", token);
 
-    Axios.post("http://0354238911ac.ngrok.io/api/activate/", formData)
+    Axios.post("http://712e78c007cc.ngrok.io/api/activate/", formData)
       .then((res) => {
         console.log(res);
+        notify();
       })
       .catch((err) => {
         console.log(err);
+        notifyWaring();
       });
   }, []);
 
   return (
     <div className="home-main-page">
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <HomeNavbar />
       <HomeHeader />
       <main>

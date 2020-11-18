@@ -57,7 +57,7 @@ function SignUp() {
             formData.append("phone", values.phone);
             formData.append("parent_username", values.partner);
 
-            const url = "http://0354238911ac.ngrok.io/api/register/";
+            const url = "http://712e78c007cc.ngrok.io/api/register/";
             // const config = {
             //   headers: {
             //     Authorization: "Bearer my-token",
@@ -72,7 +72,7 @@ function SignUp() {
 
                 setVisible(true);
                 setAlertColor("success");
-                setAlertmessage("Ma'lumotlar moffaqiyatli kiritildi");
+                setAlertmessage("Ma'lumotlar moffaqiyatli kiritildi ");
                 setTimeout(() => {
                   setVisible(false);
                 }, 2000);

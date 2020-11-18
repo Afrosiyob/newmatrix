@@ -8,8 +8,11 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { ProvideAuth } from "./components/auth/Auth";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import "react-toastify/dist/ReactToastify.css";
 // import i18n (needs to be bundled ;))
 import "./i18n";
+
 ReactDOM.render(
   <React.StrictMode>
     <Suspense fallback="loading">
