@@ -4,13 +4,26 @@ import "./SignIn.scss";
 import { Formik } from "formik";
 import { Col, Form, FormGroup, Input } from "reactstrap";
 import Ripples from "react-ripples";
-import axios from "axios";
+// import axios from "axios";
+import { useHistory, useLocation } from "react-router-dom";
+import { useAuth } from "../../../components/auth/Auth";
 const SignInValues = {
   userName: "",
   password: "",
 };
 
 function SignIn() {
+  let history = useHistory();
+  let location = useLocation();
+  let auth = useAuth();
+
+  let { from } = location.state || { from: { pathname: "/" } };
+  let login = () => {
+    auth.signin(() => {
+      history.replace(from);
+    });
+  };
+
   return (
     <div className="sign-in-modal">
       <h1 className="text-muted font-weight-bold mb-5"> Sign in </h1>
@@ -32,11 +45,11 @@ function SignIn() {
             alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
 
-            const formData = new FormData();
-            formData.append("username", values.userName);
-            formData.append("password", values.password);
+            // const formData = new FormData();
+            // formData.append("username", values.userName);
+            // formData.append("password", values.password);
 
-            const url = "http://caa54ab54a60.ngrok.io/api/login/";
+            // const url = "http://caa54ab54a60.ngrok.io/api/login/";
 
             // const config = {
             //   headers: {
@@ -45,12 +58,14 @@ function SignIn() {
             //   },
             // };
 
-            axios
-              .post(url, formData)
-              .then((response) => console.log(response))
-              .catch((error) => {
-                console.error("There was an error!", error);
-              });
+            // axios
+            //   .post(url, formData)
+            //   .then((response) => console.log(response))
+            //   .catch((error) => {
+            //     console.error("There was an error!", error);
+            //   });
+
+            login();
           }, 400);
         }}
       >
