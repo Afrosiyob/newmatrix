@@ -13,11 +13,6 @@ import "./Home.scss";
 function Home(props) {
   const { id, token } = useParams();
 
-  console.log("====================================");
-  console.log("id = " + id);
-  console.log("====================================");
-  console.log("token = " + token);
-  console.log("====================================");
   const notify = () =>
     toast.success(" Siz ro'yxatdan o'tdingiz !", {
       position: "top-right",
@@ -45,13 +40,13 @@ function Home(props) {
     formData.append("id", id);
     formData.append("token", token);
 
-    Axios.post("http://712e78c007cc.ngrok.io/api/activate/", formData)
+    Axios.post("http://b7d71dee69c7.ngrok.io/api/activate/", formData)
       .then((res) => {
         console.log(res);
         notify();
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err.response.data);
         notifyWaring();
       });
   }, []);

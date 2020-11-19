@@ -3,11 +3,14 @@ import React, { useContext, createContext, useState } from "react";
 const fakeAuth = {
   isAuthenticated: false,
   signin(cb) {
-    fakeAuth.isAuthenticated = true;
+    if (localStorage.getItem("user")) {
+      fakeAuth.isAuthenticated = true;
+    }
     setTimeout(cb, 100); // fake async
   },
   signout(cb) {
     fakeAuth.isAuthenticated = false;
+    localStorage.removeItem("user");
     setTimeout(cb, 100);
   },
 };

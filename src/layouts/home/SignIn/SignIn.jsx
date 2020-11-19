@@ -4,7 +4,7 @@ import "./SignIn.scss";
 import { Formik } from "formik";
 import { Col, Form, FormGroup, Input } from "reactstrap";
 import Ripples from "react-ripples";
-// import axios from "axios";
+import axios from "axios";
 import { useHistory, useLocation } from "react-router-dom";
 import { useAuth } from "../../../components/auth/Auth";
 const SignInValues = {
@@ -42,14 +42,14 @@ function SignIn() {
         // }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+            // alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
 
-            // const formData = new FormData();
-            // formData.append("username", values.userName);
-            // formData.append("password", values.password);
+            const formData = new FormData();
+            formData.append("username", values.userName);
+            formData.append("password", values.password);
 
-            // const url = "http://caa54ab54a60.ngrok.io/api/login/";
+            const url = "http://b7d71dee69c7.ngrok.io/api/login/";
 
             // const config = {
             //   headers: {
@@ -58,14 +58,19 @@ function SignIn() {
             //   },
             // };
 
-            // axios
-            //   .post(url, formData)
-            //   .then((response) => console.log(response))
-            //   .catch((error) => {
-            //     console.error("There was an error!", error);
-            //   });
+            axios
+              .post(url, formData)
+              .then((response) => {
+                console.log(response);
 
-            login();
+                localStorage.setItem("user", response.data.token);
+                login();
+              })
+              .catch((error) => {
+                console.error("There was an error!", error);
+              });
+
+            console.log("token = = =" + localStorage.getItem("user"));
           }, 400);
         }}
       >

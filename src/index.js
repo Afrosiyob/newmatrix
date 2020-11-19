@@ -14,15 +14,15 @@ import "react-toastify/dist/ReactToastify.css";
 import "./i18n";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Suspense fallback="loading">
-      <ProvideAuth>
+  <ProvideAuth>
+    <React.StrictMode>
+      <Suspense fallback="loading">
         <Router>
           <App />
         </Router>{" "}
-      </ProvideAuth>{" "}
-    </Suspense>{" "}
-  </React.StrictMode>,
+      </Suspense>{" "}
+    </React.StrictMode>
+  </ProvideAuth>,
   document.getElementById("root")
 );
 
