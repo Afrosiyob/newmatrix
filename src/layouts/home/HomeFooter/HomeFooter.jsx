@@ -38,9 +38,9 @@ function HomeFooter() {
                   y2="63.4808"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#5F2EEA" />
-                  <stop offset="0.770833" stop-color="#7586FF" />
-                  <stop offset="1" stop-color="#605CFF" />
+                  <stop stopColor="#5F2EEA" />
+                  <stop offset="0.770833" stopColor="#7586FF" />
+                  <stop offset="1" stopColor="#605CFF" />
                 </linearGradient>
                 <linearGradient
                   id="paint1_linear"
@@ -50,8 +50,8 @@ function HomeFooter() {
                   y2="57.7339"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#057CD3" />
-                  <stop offset="1" stop-color="#0295FF" />
+                  <stop stopColor="#057CD3" />
+                  <stop offset="1" stopColor="#0295FF" />
                 </linearGradient>
               </defs>
             </svg>
@@ -66,14 +66,14 @@ function HomeFooter() {
 
             <Ripples color="rgba(255,255,255,0.5)" className="rounded-pill">
               <a href="#!">
-                <i class="fab fa-telegram-plane"></i>
+                <i className="fab fa-telegram-plane"></i>
               </a>
             </Ripples>
 
             <Ripples color="rgba(255,255,255,0.5)" className="rounded-pill">
               <a href="#!">
                 {" "}
-                <i class="fab fa-skype"></i>{" "}
+                <i className="fab fa-skype"></i>{" "}
               </a>
             </Ripples>
           </div>

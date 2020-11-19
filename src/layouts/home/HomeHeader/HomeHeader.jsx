@@ -10,7 +10,7 @@ function HomeHeader() {
     // if (!counterOne && window.pageYOffset > 3600) {
     // } else if (counterOne && window.pageYOffset <= 3600) {
     // }
-    console.log(window.pageYOffset);
+    // console.log(window.pageYOffset);
   };
 
   window.addEventListener("scroll", checkScrollTop);
@@ -195,20 +195,20 @@ function HomeHeader() {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M44.3264 1.07321L156.561 92.4392L127.393 227.424L44.3264 1.07321Z"
             fill="url(#paint0_linear)"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M296.506 55.5649L156.561 92.4392L127.393 227.424L296.506 55.5649Z"
             fill="url(#paint1_linear)"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M296.123 54.9706L156.61 93.0592L43.9434 0.478882L296.123 54.9706Z"
             fill="url(#paint2_linear)"
           />
@@ -221,8 +221,8 @@ function HomeHeader() {
               y2="127.869"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#DF5000" />
-              <stop offset="1" stop-color="#FFC93D" />
+              <stop stopColor="#DF5000" />
+              <stop offset="1" stopColor="#FFC93D" />
             </linearGradient>
             <linearGradient
               id="paint1_linear"
@@ -232,8 +232,8 @@ function HomeHeader() {
               y2="155.114"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#FFA318" />
-              <stop offset="1" stop-color="#FFD749" />
+              <stop stopColor="#FFA318" />
+              <stop offset="1" stopColor="#FFD749" />
             </linearGradient>
             <linearGradient
               id="paint2_linear"
@@ -243,8 +243,8 @@ function HomeHeader() {
               y2="27.7309"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#FF9900" />
-              <stop offset="1" stop-color="#FFCF24" />
+              <stop stopColor="#FF9900" />
+              <stop offset="1" stopColor="#FFCF24" />
             </linearGradient>
           </defs>
         </svg>

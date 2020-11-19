@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Admin from "../pages/admin/Admin";
 import Home from "../pages/home/Home";
-import { LoginPage } from "../pages/LoginPage";
+// import { LoginPage } from "../pages/LoginPage";
 import { PrivateRoute } from "./PrivateRoute";
 
 function Routes() {
@@ -11,12 +11,9 @@ function Routes() {
       <Route path={["/", "/verify/:id/:token"]} exact>
         <Home />
       </Route>{" "}
-      <Route path="/login">
-        <LoginPage />
-      </Route>{" "}
-      <PrivateRoute path="/admin" exact>
+      <Route path="/admin">
         <Admin />
-      </PrivateRoute>{" "}
+      </Route>{" "}
     </Switch>
   );
 }

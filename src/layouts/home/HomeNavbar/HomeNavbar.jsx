@@ -12,15 +12,15 @@ import {
   Container,
 } from "reactstrap";
 
-import Ripples from "react-ripples";
+// import Ripples from "react-ripples";
 
 import { Link, animateScroll as scroll } from "react-scroll";
 
 import "./HomeNavbar.scss";
 import { useTranslation } from "react-i18next";
 import ModalComponent from "../../../components/ModalComponent/ModalComponent";
-import { useHistory } from "react-router-dom";
-import { useAuth } from "../../../components/auth/Auth";
+// import { useHistory } from "react-router-dom";
+// import { useAuth } from "../../../components/auth/Auth";
 
 const HomeNavbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,8 +39,8 @@ const HomeNavbar = (props) => {
     setIsOpen(!isOpen);
   };
 
-  let history = useHistory();
-  let auth = useAuth();
+  // let history = useHistory();
+  // let auth = useAuth();
 
   return (
     <Navbar expand="md" light fixed="top" className="shadow-lg home-navbar">
@@ -109,7 +109,7 @@ const HomeNavbar = (props) => {
         </NavbarBrand>
         <NavbarToggler onClick={toggle}>
           {" "}
-          <i class={isOpen ? "fas fa-times" : "fas fa-bars"}></i>{" "}
+          <i className={isOpen ? "fas fa-times" : "fas fa-bars"}></i>{" "}
         </NavbarToggler>
         <Collapse isOpen={isOpen} navbar>
           <Nav className="m-auto" navbar>

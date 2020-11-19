@@ -12,16 +12,24 @@ import {
   DingdingOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import SideBarLogo from "../../components/SideBarlogo/SideBarLogo";
 import TopNavbar from "../../components/TopNavbar/TopNavbar";
+import { Link, Route, Switch } from "react-router-dom";
+import Home from "./Home/Home";
+import Team from "./Team/Team";
+import Marketing from "./Marketing/Marketing";
+import Finans from "./Finans/Finans";
+import Investment from "./Investment/investment";
+import Settings from "./Settings/Settings";
+import Statistics from "./Statistics/Statistics";
 
 const { Sider, Content, Footer } = Layout;
 
 function Admin() {
   const [collapsed, setCollapsed] = useState(false);
 
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   const toggle = () => {
     setCollapsed(!collapsed);
@@ -30,31 +38,38 @@ function Admin() {
   const menuItem = [
     {
       icon: <HomeOutlined />,
-      text: "Home ",
+      text: "Home",
+      url: "/admin/home",
     },
     {
       icon: <LineChartOutlined />,
       text: "Statistics ",
+      url: "/admin/statistics",
     },
     {
       icon: <TeamOutlined />,
       text: "Team ",
+      url: "/admin/team",
     },
     {
       icon: <BarcodeOutlined />,
       text: "Marketing ",
+      url: "/admin/marketing",
     },
     {
       icon: <RiseOutlined />,
       text: "Finans ",
+      url: "/admin/finans",
     },
     {
       icon: <DingdingOutlined />,
       text: "My investment ",
+      url: "/admin/investment",
     },
     {
       icon: <SettingOutlined />,
       text: "Settings ",
+      url: "/admin/settings",
     },
   ];
 
@@ -76,7 +91,7 @@ function Admin() {
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["0"]}>
           {menuItem.map((item, index) => (
             <Menu.Item key={index} icon={item.icon}>
-              {item.text + " " + index + t("msg")}
+              <Link to={item.url}>{item.text}</Link>
             </Menu.Item>
           ))}
         </Menu>
@@ -92,99 +107,15 @@ function Admin() {
         >
           <TopNavbar toggle={toggle} collapsed={collapsed} />
           <main style={{ margin: "16px" }}>
-            <br />
-            Really
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            long
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
-            ...
-            <br />
+            <Switch>
+              <Route path="/admin/home" component={Home} />
+              <Route path="/admin/statistics" component={Statistics} />
+              <Route path="/admin/team" component={Team} />
+              <Route path="/admin/marketing" component={Marketing} />
+              <Route path="/admin/finans" component={Finans} />
+              <Route path="/admin/investment" component={Investment} />
+              <Route path="/admin/settings" component={Settings} />
+            </Switch>
           </main>
 
           <Footer style={{ textAlign: "center" }}>

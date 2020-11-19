@@ -13,20 +13,20 @@ function RightShape() {
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M1.2959 76.637L143.815 101.791L184.065 233.895L1.2959 76.637Z"
           fill="url(#paint0_linear)"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M248.095 1.44107L143.815 101.791L184.065 233.895L248.095 1.44107Z"
           fill="url(#paint1_linear)"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M247.471 1.10845L144.16 102.309L0.671875 76.3044L247.471 1.10845Z"
           fill="url(#paint2_linear)"
         />
@@ -39,8 +39,8 @@ function RightShape() {
             y2="136.465"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#5539E7" />
-            <stop offset="1" stop-color="#677AFF" />
+            <stop stopColor="#5539E7" />
+            <stop offset="1" stopColor="#677AFF" />
           </linearGradient>
           <linearGradient
             id="paint1_linear"
@@ -50,8 +50,8 @@ function RightShape() {
             y2="98.8687"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FFA318" />
-            <stop offset="1" stop-color="#FFD749" />
+            <stop stopColor="#FFA318" />
+            <stop offset="1" stopColor="#FFD749" />
           </linearGradient>
           <linearGradient
             id="paint2_linear"
@@ -61,8 +61,8 @@ function RightShape() {
             y2="38.6979"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#745FF3" />
-            <stop offset="1" stop-color="#936DFF" />
+            <stop stopColor="#745FF3" />
+            <stop offset="1" stopColor="#936DFF" />
           </linearGradient>
         </defs>
       </svg>
