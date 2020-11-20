@@ -39,12 +39,12 @@ function Admin() {
     {
       icon: <HomeOutlined />,
       text: "Home",
-      url: "/admin/home",
+      url: "/",
     },
     {
       icon: <LineChartOutlined />,
       text: "Statistics ",
-      url: "/admin/statistics",
+      url: "/admin",
     },
     {
       icon: <TeamOutlined />,
@@ -88,7 +88,7 @@ function Admin() {
         <div className="logo">
           <SideBarLogo />
         </div>
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={["0"]}>
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
           {menuItem.map((item, index) => (
             <Menu.Item key={index} icon={item.icon}>
               <Link to={item.url}>{item.text}</Link>
@@ -108,8 +108,7 @@ function Admin() {
           <TopNavbar toggle={toggle} collapsed={collapsed} />
           <main style={{ margin: "16px" }}>
             <Switch>
-              <Route path="/admin/home" component={Home} />
-              <Route path="/admin/statistics" component={Statistics} />
+              <Route path="/admin" exact component={Statistics} />
               <Route path="/admin/team" component={Team} />
               <Route path="/admin/marketing" component={Marketing} />
               <Route path="/admin/finans" component={Finans} />
