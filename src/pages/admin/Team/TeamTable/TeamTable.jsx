@@ -89,6 +89,34 @@ const data = [
                 login: "Jim Green jr.",
                 age: 25,
                 address: "London No. 3 Lake Park",
+                children: [
+                  {
+                    key: 1312,
+                    login: "Jim Green jr.",
+                    age: 25,
+                    address: "London No. 3 Lake Park",
+                    children: [
+                      {
+                        key: 1313,
+                        login: "Jim Green jr.",
+                        age: 25,
+                        address: "London No. 3 Lake Park",
+                      },
+                      {
+                        key: 1314,
+                        login: "Jimmy Green sr.",
+                        age: 18,
+                        address: "London No. 4 Lake Park",
+                      },
+                    ],
+                  },
+                  {
+                    key: 1312,
+                    login: "Jimmy Green sr.",
+                    age: 18,
+                    address: "London No. 4 Lake Park",
+                  },
+                ],
               },
               {
                 key: 1312,
@@ -171,7 +199,7 @@ const data = [
 export function TeamTable() {
   return (
     <>
-      <Table columns={columns} dataSource={data} scroll={{ x: 1500, y: 300 }} />
+      <Table columns={columns} dataSource={data} scroll={{ x: 1500, y: 500 }} />
     </>
   );
 }

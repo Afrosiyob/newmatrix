@@ -32,6 +32,7 @@ export default class AntModal extends React.Component {
           Open Modal
         </Button>
         <Modal
+          centered={true}
           title="Basic Modal"
           visible={this.state.visible}
           onOk={this.handleOk}
