@@ -16,7 +16,7 @@ import {
 import SideBarLogo from "../../components/SideBarlogo/SideBarLogo";
 import TopNavbar from "../../components/TopNavbar/TopNavbar";
 import { Link, Route, Switch } from "react-router-dom";
-import Home from "./Home/Home";
+
 import Team from "./Team/Team";
 import Marketing from "./Marketing/Marketing";
 import Finans from "./Finans/Finans";
