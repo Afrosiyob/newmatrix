@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import LeftInformation from "./LeftInformation/LeftInformation";
+import RightInformation from "./RightInformation/RightInformation";
 import "./Settings.scss";
 
 function Settings() {
@@ -16,7 +17,10 @@ function Settings() {
         </Col>
         <Col sm="12" md="9">
           <h4 className="w-100 text-muted mb-3"> Change </h4>
-          <div>wfcew</div>
+          <div>
+            {" "}
+            <RightInformation />{" "}
+          </div>
         </Col>
       </Row>
     </Container>
