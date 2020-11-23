@@ -19,7 +19,8 @@ const SignUpValues = {
   robot: "",
 };
 
-function SignUp() {
+function SignUp(props) {
+  console.log(props);
   const [visible, setVisible] = useState(false);
 
   const [alertColor, setAlertColor] = useState("");

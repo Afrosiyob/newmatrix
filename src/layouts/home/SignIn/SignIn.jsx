@@ -12,7 +12,7 @@ const SignInValues = {
   password: "",
 };
 
-function SignIn() {
+function SignIn({ username, password, setUsername, setPassword }) {
   let history = useHistory();
   let location = useLocation();
   let auth = useAuth();

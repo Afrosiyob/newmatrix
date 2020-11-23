@@ -3,8 +3,9 @@
 import React, { useState } from "react";
 import { Modal, ModalHeader, ModalBody, Row, Col } from "reactstrap";
 import Ripples from "react-ripples";
-import SignIn from "../../layouts/home/SignIn/SignIn";
-import SignUp from "../../layouts/home/SignUp/SignUp";
+
+import SignInContainer from "../../containers/home/SignIn/SignInContainer";
+import SignUpContainer from "../../containers/home/SignUp/SignUpContainer";
 
 const ModalComponent = (props) => {
   const { buttonLabel, className } = props;
@@ -49,10 +50,10 @@ const ModalComponent = (props) => {
         <ModalBody>
           <Row>
             <Col sm="12" md="8" className="mb-3">
-              <SignUp />
+              <SignUpContainer />
             </Col>
             <Col sm="12" md="4" className="mb-3">
-              <SignIn />
+              <SignInContainer />
             </Col>
           </Row>
         </ModalBody>
