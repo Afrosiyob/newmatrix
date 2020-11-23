@@ -4,6 +4,7 @@ import { Container } from "reactstrap";
 import Ripples from "react-ripples";
 import "./HomeHeader.scss";
 import HomeHeaderSlider from "./HomeHeaderSlider/HomeHeaderSlider";
+import { useTranslation } from "react-i18next";
 
 function HomeHeader() {
   const checkScrollTop = () => {
@@ -14,20 +15,21 @@ function HomeHeader() {
   };
 
   window.addEventListener("scroll", checkScrollTop);
+  const { t } = useTranslation();
 
   return (
     <div className="home-header" id="section1">
       <div className="home-header-main-info">
         <Container>
-          <h1 className="mb-3">Business Trend Company</h1>
-          <h4 className="mb-3">Dreams come true with us</h4>
+          <h1 className="mb-3">{t(`homeHeader.Titul`)}</h1>
+          <h4 className="mb-3">{t(`homeHeader.Titul2`)}</h4>
           <div className="wrap-btns">
             <Ripples
               color="rgba(255,255,255,0.5)"
               className="mr-3 mb-3 rounded-pill"
             >
               <button className="header-btn  px-5 py-2 rounded-pill">
-                Became partner
+                {t(`homeHeader.Titul3`)}
               </button>
             </Ripples>
             <Ripples
@@ -35,7 +37,7 @@ function HomeHeader() {
               className="mr-3 mb-3 rounded-pill"
             >
               <button className="header-btn rounded-pill px-5 py-2">
-                Watch intro
+                {t(`homeHeader.Titul4`)}
               </button>
             </Ripples>
           </div>

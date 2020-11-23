@@ -6,8 +6,10 @@ import { Container } from "reactstrap";
 import ShapeDots from "./ShapeDots/ShapeDots";
 import LeftShape from "./LeftShape/LeftShape";
 import RightShape from "./RightShape/RightShape";
+import { useTranslation } from "react-i18next";
 
 function HomePdf() {
+  const { t } = useTranslation();
   return (
     <div className="home-pdf my-5 py-5" id="section3">
       <LeftShape />
@@ -15,7 +17,7 @@ function HomePdf() {
 
       <Container>
         <h1 className="w-100 text-center font-weight-bold mb-4 position-relative">
-          PDF - materials
+          {t(`homeHeader.Titul5`)}
         </h1>
 
         <div className="wrap-box">

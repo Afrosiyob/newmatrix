@@ -4,18 +4,20 @@ import "./HomeReg.scss";
 import Ripples from "react-ripples";
 
 import { Container, Row, Col } from "reactstrap";
+import { useTranslation } from "react-i18next";
 
 function HomeReg() {
+  const { t } = useTranslation();
   return (
     <div className="home-reg my-5 py-3" id="section4">
-      <h1 className="back-text"> Business Trend Company </h1>
+      <h1 className="back-text"> {t(`homeReg.Titul`)} </h1>
 
       <Container className="position-relative">
         <Row>
           <Col sm="12" md="5">
             <div className="left-box">
-              <h1> Business Trend Company </h1>
-              <h3>We help the people</h3>
+              <h1> {t(`homeReg.Titul`)} </h1>
+              <h3>{t(`homeReg.Titul2`)}</h3>
             </div>
           </Col>
           <Col sm="12" md="5">
@@ -25,7 +27,7 @@ function HomeReg() {
                 className="mr-3 mb-3 rounded-pill"
               >
                 <button className="header-btn  px-5 py-2 rounded-pill">
-                  Sign In
+                  {t(`homeReg.Titul4`)}
                 </button>
               </Ripples>
               <Ripples
@@ -33,7 +35,7 @@ function HomeReg() {
                 className="mr-3 mb-3 rounded-pill"
               >
                 <button className="header-btn rounded-pill px-5 py-2">
-                  Become Partner
+                  {t(`homeReg.Titul3`)}
                 </button>
               </Ripples>
             </div>

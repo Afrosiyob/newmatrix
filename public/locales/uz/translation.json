@@ -8,5 +8,35 @@
     "contacts": "Aloqa",
     "signIn": "Kirish",
     "lang": "Til"
+  },
+  "homeAbout":{
+    "Title":"Business Trend Company - bu bir nechta yo'nalishlarni o'z ichiga olgan hamjamiyat: Turli tendentsiyalar bo'yicha o'qitish bilan yuqori rentabellikdagi matritsali modellar; Kripto bozorida savdo qilish orqali oqlangan qulay va ishonchli investitsiya modeli; O'zining IT-dasturiy ta'minotini yaratish; Xolding hisobidan xayriya. Ning asosiy g'oyasi",
+    "Title2":"Xolding imkon qadar ko'proq odamlarga yordam berishdir. Kimdir uchun bu ishdan xalos bo'lishda yoki kapitalni ko'paytirishda yoki munosib kompaniyada uzoq muddatli va samarali ishlashda yordam beradi. Boshqasi uchun - sayohat, o'z uyi, qimmatbaho mashinalar, qo'shimcha yoki masofadan turib ishlash kabi orzu va maqsadlarni ro'yobga chiqarish, kimdir uchun - xayriya yordami bilan beg'ubor yordam.",
+    "Title3":"GMMG Holdings-ning asosiy tamoyillari - bu halollik, ochiqlik va sheriklar uchun maksimal qiymat. Biz bilan birga rivojlanishga qaror qilgan minglab odamlar bunga allaqachon ishonishgan."
+  },
+  "homeFooter":{
+      "Titul":"Toshkent shahri, Amir Temur ko'chasi",
+      "Titul2":"Bosh menu",
+      "Titul3":"Haqida",
+      "Titul4":"Xolding tarkibi",
+      "Titul5":"PDF materiallari",
+      "Titul6":"Qonuniylik",
+      "Titul7":"Kontaktlar",
+      "Titul8":"To'lov tizimi",
+      "Titul9":"Yozing:",
+      "Titul10":"biz odamlarga yordam beramiz"
+  },
+  "homeHeader":{
+      "Titul":"Business Trend Company",
+      "Titul2":"Orzular biz bilan ro'yobga chiqadi",
+      "Titul3":"Sherik bo'lish",
+      "Titul4":"Intro-ni tomosha qiling",
+      "Titul5":"PDF materiallari"
+  },
+  "homeReg":{
+      "Titul":"Business Trend Company",
+      "Titul2":"Biz odamlarga yordam beramiz",
+      "Titul3":"Sherik bo'lish",
+      "Titul4":"Ro'yxatdan o'tish"
   }
 }

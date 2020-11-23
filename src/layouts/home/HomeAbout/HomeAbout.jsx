@@ -3,8 +3,10 @@ import React from "react";
 import "./HomeAbout.scss";
 
 import { Col, Container, Row } from "reactstrap";
+import { useTranslation } from "react-i18next";
 
 function HomeAbout() {
+  const { t } = useTranslation();
   return (
     <div className="home-about my-5" id="section2">
       <Container>
@@ -37,29 +39,9 @@ function HomeAbout() {
           </Col>
           <Col sm="12" md="6">
             <div className="right-box">
-              <p>
-                {" "}
-                Business Trend Company - this is the community, which includes
-                several areas: High-yield matrix models with training in various
-                trends; Favorable and reliable investment model, justified by
-                trading on the crypto market; Development of own IT-software;
-                Charity at the expense of the Holding. The main idea of the
-              </p>
-              <p>
-                {" "}
-                Holding is to help as many people as possible. For someone it is
-                help in getting rid of work, or in multiplying capital, or in
-                long-term and productive work in a worthy company. For another
-                one - the realization of dreams and goals like traveling, own
-                house, premium cars, additional or remote earnings, and for
-                someone - just gratuitous help via charity.
-              </p>
-              <p>
-                {" "}
-                The main principles of GMMG Holdings are honesty, openness and
-                maximum value for partners. Thousands of people who decided to
-                develop together with us already convinced in this.
-              </p>
+              <p> {t(`homeAbout.Title`)}</p>
+              <p> {t(`homeAbout.Title2`)}</p>
+              <p> {t(`homeAbout.Title3`)}</p>
             </div>
           </Col>
         </Row>
