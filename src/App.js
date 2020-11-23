@@ -3,9 +3,7 @@ import React from "react";
 import Routes from "./routes/Routes";
 
 function App() {
-
-
-  console.log('hello afrosiyob');
+  console.log("hello afrosiyob thanks GOD");
   return (
     <div className="App">
       {" "}
