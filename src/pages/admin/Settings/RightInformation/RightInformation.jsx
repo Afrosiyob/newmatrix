@@ -3,16 +3,9 @@ import { Card, Upload, message } from "antd";
 import { Formik } from "formik";
 
 import { InboxOutlined } from "@ant-design/icons";
-import {
-  Button,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  FormText,
-  Row,
-  Col,
-} from "reactstrap";
+import { Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
+
+const { Dragger } = Upload;
 
 const props = {
   name: "file",
@@ -41,23 +34,11 @@ const initialValues = {
   image: "",
 };
 
-const { Dragger } = Upload;
 function RightInformation() {
   return (
     <Card>
       <Formik
         initialValues={initialValues}
-        // validate={(values) => {
-        //   const errors = {};
-        //   if (!values.email) {
-        //     errors.email = "Required";
-        //   } else if (
-        //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-        //   ) {
-        //     errors.email = "Invalid email address";
-        //   }
-        //   return errors;
-        // }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
@@ -79,23 +60,29 @@ function RightInformation() {
             <Row>
               <Col sm="12" md="6" className="mb-3">
                 <FormGroup>
-                  <Label for="exampleEmail">Email</Label>
+                  <Label for="ism">Ism</Label>
                   <Input
-                    type="email"
-                    name="email"
-                    id="exampleEmail"
-                    placeholder="with a placeholder"
+                    type="text"
+                    name="ism"
+                    id="ism"
+                    placeholder="Ismingizni kiriting"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.ism}
                   />
                 </FormGroup>
               </Col>
               <Col sm="12" md="6" className="mb-3">
                 <FormGroup>
-                  <Label for="exampleEmail">Email</Label>
+                  <Label for="familiya">Familiya</Label>
                   <Input
-                    type="email"
-                    name="email"
-                    id="exampleEmail"
-                    placeholder="with a placeholder"
+                    type="text"
+                    name="familiya"
+                    id="familiya"
+                    placeholder="Familiyangizni kiriting"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.familiya}
                   />
                 </FormGroup>
               </Col>
@@ -103,23 +90,29 @@ function RightInformation() {
             <Row>
               <Col sm="12" md="6" className="mb-3">
                 <FormGroup>
-                  <Label for="exampleEmail">Email</Label>
+                  <Label for="link">Link</Label>
                   <Input
-                    type="email"
-                    name="email"
-                    id="exampleEmail"
-                    placeholder="with a placeholder"
+                    type="text"
+                    name="link"
+                    id="link"
+                    placeholder="Link kiriting"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.link}
                   />
                 </FormGroup>
               </Col>
               <Col sm="12" md="6" className="mb-3">
                 <FormGroup>
-                  <Label for="exampleEmail">Email</Label>
+                  <Label for="telegram">Telegram</Label>
                   <Input
-                    type="email"
-                    name="email"
-                    id="exampleEmail"
-                    placeholder="with a placeholder"
+                    type="text"
+                    name="telegram"
+                    id="telegram"
+                    placeholder="Telegram"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.telegram}
                   />
                 </FormGroup>
               </Col>
@@ -128,34 +121,40 @@ function RightInformation() {
               <Col sm="12" md="6" className="mb-3">
                 <FormGroup>
                   <Label
-                    for="exampleEmail"
+                    for="phonenumber"
                     className="font-weight-bold text-success"
                   >
-                    Email
+                    phonenumber
                   </Label>
                   <Input
                     className="is-valid"
-                    type="email"
-                    name="email"
-                    id="exampleEmail"
-                    placeholder="with a placeholder"
+                    type="text"
+                    name="phonenumber"
+                    id="phonenumber"
+                    placeholder="Phonenumber"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.phonenumber}
                   />
                 </FormGroup>
               </Col>
               <Col sm="12" md="6" className="mb-3">
                 <FormGroup>
                   <Label
-                    for="exampleEmail"
+                    for="abouteme"
                     className="text-danger font-weight-bold"
                   >
-                    Email
+                    abouteme
                   </Label>
                   <Input
                     className="is-invalid"
-                    type="email"
-                    name="email"
-                    id="exampleEmail"
-                    placeholder="with a placeholder"
+                    type="text"
+                    name="abouteme"
+                    id="abouteme"
+                    placeholder="abouteme"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.abouteme}
                   />
                 </FormGroup>
               </Col>
@@ -176,22 +175,6 @@ function RightInformation() {
               </Dragger>
             </Col>
 
-            <input
-              type="email"
-              name="email"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.email}
-            />
-            {errors.email && touched.email && errors.email}
-            <input
-              type="password"
-              name="password"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.password}
-            />
-            {errors.password && touched.password && errors.password}
             <button type="submit" disabled={isSubmitting}>
               Submit
             </button>
