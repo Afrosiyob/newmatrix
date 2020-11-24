@@ -1,28 +1,36 @@
 import React from "react";
-import { Card, Upload, message } from "antd";
+import { Card } from "antd";
 import { Formik } from "formik";
 
-import { InboxOutlined } from "@ant-design/icons";
-import { Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
+// import { InboxOutlined } from "@ant-design/icons";
+import {
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Row,
+  Col,
+  CustomInput,
+} from "reactstrap";
 
-const { Dragger } = Upload;
+// const { Dragger } = Upload;
 
-const props = {
-  name: "file",
-  multiple: true,
-  action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
-  onChange(info) {
-    const { status } = info.file;
-    if (status !== "uploading") {
-      console.log(info.file, info.fileList);
-    }
-    if (status === "done") {
-      message.success(`${info.file.name} file uploaded successfully.`);
-    } else if (status === "error") {
-      message.error(`${info.file.name} file upload failed.`);
-    }
-  },
-};
+// const props = {
+//   name: "file",
+//   multiple: true,
+//   action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
+//   onChange(info) {
+//     const { status } = info.file;
+//     if (status !== "uploading") {
+//       console.log(info.file, info.fileList);
+//     }
+//     if (status === "done") {
+//       message.success(`${info.file.name} file uploaded successfully.`);
+//     } else if (status === "error") {
+//       message.error(`${info.file.name} file upload failed.`);
+//     }
+//   },
+// };
 
 const initialValues = {
   ism: "",
@@ -42,6 +50,11 @@ function RightInformation() {
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
+
+            let formData = new FormData();
+
+            formData.append("image", values.image);
+
             setSubmitting(false);
           }, 400);
         }}
@@ -54,6 +67,7 @@ function RightInformation() {
           handleBlur,
           handleSubmit,
           isSubmitting,
+          setFieldValue,
           /* and other goodies */
         }) => (
           <Form onSubmit={handleSubmit}>
@@ -160,8 +174,8 @@ function RightInformation() {
               </Col>
             </Row>
 
-            <Col className="mb-3">
-              <Dragger {...props} listType="picture">
+            <div className="mb-3">
+              {/* <Dragger {...props} listType="picture">
                 <p className="ant-upload-drag-icon">
                   <InboxOutlined />
                 </p>
@@ -172,8 +186,21 @@ function RightInformation() {
                   Support for a single or bulk upload. Strictly prohibit from
                   uploading company data or other band files
                 </p>
-              </Dragger>
-            </Col>
+              </Dragger> */}
+
+              <FormGroup>
+                <Label for="image">File Browser with Custom Label</Label>
+                <CustomInput
+                  type="file"
+                  id="image"
+                  name="image"
+                  label="Yo, pick a file!"
+                  onChange={(event) => {
+                    setFieldValue("image", event.currentTarget.files[0]);
+                  }}
+                />
+              </FormGroup>
+            </div>
 
             <button type="submit" disabled={isSubmitting}>
               Submit
