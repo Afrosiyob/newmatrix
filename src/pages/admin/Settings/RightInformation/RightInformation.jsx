@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "antd";
 import { Formik } from "formik";
-
+import * as Yup from "yup";
 // import { InboxOutlined } from "@ant-design/icons";
 import {
   Form,
@@ -11,6 +11,8 @@ import {
   Row,
   Col,
   CustomInput,
+  FormFeedback,
+  FormText,
 } from "reactstrap";
 
 // const { Dragger } = Upload;
@@ -42,10 +44,21 @@ const initialValues = {
   image: "",
 };
 
+const userEditSchema = Yup.object().shape({
+  ism: Yup.string().required("required"),
+  familiya: Yup.string().required("required"),
+  link: Yup.string().required("required"),
+  telegram: Yup.string().required("required"),
+  phonenumber: Yup.string().required("required"),
+  abouteme: Yup.string().required("required"),
+  image: Yup.mixed().required("required"),
+});
+
 function RightInformation() {
   return (
     <Card>
       <Formik
+        validationSchema={userEditSchema}
         initialValues={initialValues}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
@@ -84,6 +97,10 @@ function RightInformation() {
                     onBlur={handleBlur}
                     value={values.ism}
                   />
+
+                  {errors.ism && touched.ism ? (
+                    <p className="font-weight-bold text-danger">{errors.ism}</p>
+                  ) : null}
                 </FormGroup>
               </Col>
               <Col sm="12" md="6" className="mb-3">
@@ -98,6 +115,11 @@ function RightInformation() {
                     onBlur={handleBlur}
                     value={values.familiya}
                   />
+                  {errors.familiya && touched.familiya ? (
+                    <p className="font-weight-bold text-danger">
+                      {errors.familiya}
+                    </p>
+                  ) : null}
                 </FormGroup>
               </Col>
             </Row>
@@ -114,6 +136,11 @@ function RightInformation() {
                     onBlur={handleBlur}
                     value={values.link}
                   />
+                  {errors.link && touched.link ? (
+                    <p className="font-weight-bold text-danger">
+                      {errors.link}
+                    </p>
+                  ) : null}
                 </FormGroup>
               </Col>
               <Col sm="12" md="6" className="mb-3">
@@ -128,6 +155,11 @@ function RightInformation() {
                     onBlur={handleBlur}
                     value={values.telegram}
                   />
+                  {errors.telegram && touched.telegram ? (
+                    <p className="font-weight-bold text-danger">
+                      {errors.telegram}
+                    </p>
+                  ) : null}
                 </FormGroup>
               </Col>
             </Row>
@@ -150,6 +182,12 @@ function RightInformation() {
                     onBlur={handleBlur}
                     value={values.phonenumber}
                   />
+
+                  {errors.phonenumber && touched.phonenumber ? (
+                    <p className="font-weight-bold text-danger">
+                      {errors.phonenumber}
+                    </p>
+                  ) : null}
                 </FormGroup>
               </Col>
               <Col sm="12" md="6" className="mb-3">
@@ -162,7 +200,7 @@ function RightInformation() {
                   </Label>
                   <Input
                     className="is-invalid"
-                    type="text"
+                    type="textarea"
                     name="abouteme"
                     id="abouteme"
                     placeholder="abouteme"
@@ -170,6 +208,11 @@ function RightInformation() {
                     onBlur={handleBlur}
                     value={values.abouteme}
                   />
+                  {errors.abouteme && touched.abouteme ? (
+                    <p className="font-weight-bold text-danger">
+                      {errors.abouteme}
+                    </p>
+                  ) : null}
                 </FormGroup>
               </Col>
             </Row>
@@ -199,10 +242,17 @@ function RightInformation() {
                     setFieldValue("image", event.currentTarget.files[0]);
                   }}
                 />
+                {errors.image && touched.image ? (
+                  <p className="font-weight-bold text-danger">{errors.image}</p>
+                ) : null}
               </FormGroup>
             </div>
 
-            <button type="submit" disabled={isSubmitting}>
+            <button
+              type="submit"
+              className="btn btn-info"
+              disabled={isSubmitting}
+            >
               Submit
             </button>
           </Form>

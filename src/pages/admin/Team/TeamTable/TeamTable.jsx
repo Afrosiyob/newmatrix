@@ -2,6 +2,7 @@ import React from "react";
 
 import { Table } from "antd";
 import AntModal from "./AntModal/AntModal";
+import TeamData from "../TeamData/TeamData";
 
 const columns = [
   {
@@ -44,7 +45,14 @@ const columns = [
 const data = [
   {
     key: 1,
-    login: "John Brown sr.",
+    login: (
+      <TeamData
+        image={
+          "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+        }
+        name={"Leo"}
+      />
+    ),
     telegram: "@telegram",
     link: "link.com",
     turnover: 12,
@@ -54,19 +62,40 @@ const data = [
     children: [
       {
         key: 11,
-        login: "John Brown",
+        login: (
+          <TeamData
+            image={
+              "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+            }
+            name={"Leo"}
+          />
+        ),
         age: 42,
         address: "New York No. 2 Lake Park",
       },
       {
         key: 12,
-        login: "John Brown jr.",
+        login: (
+          <TeamData
+            image={
+              "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+            }
+            name={"Leo"}
+          />
+        ),
         age: 30,
         address: "New York No. 3 Lake Park",
         children: [
           {
             key: 121,
-            login: "Jimmy Brown",
+            login: (
+              <TeamData
+                image={
+                  "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+                }
+                name={"Leo"}
+              />
+            ),
             age: 16,
             address: "New York No. 3 Lake Park",
           },
@@ -74,19 +103,40 @@ const data = [
       },
       {
         key: 13,
-        login: "Jim Green sr.",
+        login: (
+          <TeamData
+            image={
+              "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+            }
+            name={"Leo"}
+          />
+        ),
         age: 72,
         address: "London No. 1 Lake Park",
         children: [
           {
             key: 131,
-            login: "Jim Green",
+            login: (
+              <TeamData
+                image={
+                  "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+                }
+                name={"Leo"}
+              />
+            ),
             age: 42,
             address: "London No. 2 Lake Park",
             children: [
               {
                 key: 1311,
-                login: "Jim Green jr.",
+                login: (
+                  <TeamData
+                    image={
+                      "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+                    }
+                    name={"Leo"}
+                  />
+                ),
                 age: 25,
                 address: "London No. 3 Lake Park",
                 children: [
@@ -145,7 +195,14 @@ const data = [
   },
   {
     key: 4,
-    login: "Joe Black",
+    login: (
+      <TeamData
+        image={
+          "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+        }
+        name={"Leo"}
+      />
+    ),
     age: 32,
     address: "Sidney No. 1 Lake Park",
   },
