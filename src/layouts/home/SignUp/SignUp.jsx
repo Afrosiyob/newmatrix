@@ -3,7 +3,8 @@ import { Formik } from "formik";
 import "./SignUp.scss";
 import { Col, Form, Row, FormGroup, Label, Input, Alert } from "reactstrap";
 import Ripples from "react-ripples";
-import axios from "axios";
+import { connect } from "react-redux";
+import { signUserUp } from "../../../store/user/actions";
 
 // import { Alert } from "reactstrap";
 
@@ -19,7 +20,7 @@ const SignUpValues = {
   robot: "",
 };
 
-function SignUp() {
+function SignUp(props) {
   const [visible, setVisible] = useState(false);
 
   const [alertColor, setAlertColor] = useState("");
@@ -32,21 +33,9 @@ function SignUp() {
 
       <Formik
         initialValues={SignUpValues}
-        // validate={(values) => {
-        //   const errors = {};
-        //   if (!values.email) {
-        //     errors.email = "Required";
-        //   } else if (
-        //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-        //   ) {
-        //     errors.email = "Invalid email address";
-        //   }
-        //   return errors;
-        // }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
+            // alert(JSON.stringify(values, null, 2));
 
             const formData = new FormData();
 
@@ -57,7 +46,10 @@ function SignUp() {
             formData.append("phone", values.phone);
             formData.append("parent", values.partner);
 
-            const url = "http://eb35d6d34069.ngrok.io/api/register/";
+            props.signUserUp(formData);
+            setSubmitting(false);
+
+            // const url = "http://eb35d6d34069.ngrok.io/api/register/";
             // const config = {
             //   headers: {
             //     Authorization: "Bearer my-token",
@@ -65,26 +57,26 @@ function SignUp() {
             //   },
             // };
 
-            axios
-              .post(url, formData)
-              .then((response) => {
-                console.log(response);
+            // axios
+            //   .post(url, formData)
+            //   .then((response) => {
+            //     console.log(response);
 
-                setVisible(true);
-                setAlertColor("success");
-                setAlertmessage("Ma'lumotlar moffaqiyatli kiritildi ");
-                setTimeout(() => {
-                  setVisible(false);
-                }, 1000);
-              })
-              .catch((error) => {
-                console.log("====================================");
-                console.log(error);
-                console.log("====================================");
-                // console.error("There was an error!", error.response.data);
-                // console.error("There was an error!", error.request);
-              });
-          }, 400);
+            //     setVisible(true);
+            //     setAlertColor("success");
+            //     setAlertmessage("Ma'lumotlar moffaqiyatli kiritildi ");
+            //     setTimeout(() => {
+            //       setVisible(false);
+            //     }, 1000);
+            //   })
+            //   .catch((error) => {
+            //     console.log("====================================");
+            //     console.log(error);
+            //     console.log("====================================");
+            //     console.error("There was an error!", error.response.data);
+            //     console.error("There was an error!", error.request);
+            //   });
+          }, 0);
         }}
       >
         {({
@@ -280,4 +272,8 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+const mapDispatchToProps = {
+  signUserUp,
+};
+
+export default connect(null, mapDispatchToProps)(SignUp);

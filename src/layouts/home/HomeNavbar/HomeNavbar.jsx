@@ -19,6 +19,7 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import "./HomeNavbar.scss";
 import { useTranslation } from "react-i18next";
 import ModalComponent from "../../../components/ModalComponent/ModalComponent";
+import { connect } from "react-redux";
 // import { useHistory } from "react-router-dom";
 // import { useAuth } from "../../../components/auth/Auth";
 
@@ -260,7 +261,12 @@ const HomeNavbar = (props) => {
             ) : (
               <ModalComponent buttonLabel={t(`homeNavbar.signIn`)} />
             )} */}
-            <ModalComponent buttonLabel={t(`homeNavbar.signIn`)} />
+
+            {!props.loggedIn ? (
+              <ModalComponent buttonLabel={t(`homeNavbar.signIn`)} />
+            ) : (
+              "uji bor"
+            )}
           </NavbarText>
         </Collapse>
       </Container>
@@ -268,4 +274,8 @@ const HomeNavbar = (props) => {
   );
 };
 
-export default HomeNavbar;
+const mapStateToProps = (state) => ({
+  loggedIn: state.userReducer.loggedIn,
+});
+
+export default connect(mapStateToProps, null)(HomeNavbar);

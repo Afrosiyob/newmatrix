@@ -1,18 +1,21 @@
 import React from "react";
 
-import "./SignIn.scss";
 import { Formik } from "formik";
 import { Col, Form, FormGroup, Input } from "reactstrap";
 import Ripples from "react-ripples";
-import axios from "axios";
+
 import { useHistory, useLocation } from "react-router-dom";
 import { useAuth } from "../../../components/auth/Auth";
+import { connect } from "react-redux";
+import { fetchUser } from "../../../store/user/actions";
+import "./SignIn.scss";
+
 const SignInValues = {
   userName: "",
   password: "",
 };
 
-function SignIn({ username, password, setUsername, setPassword }) {
+function SignIn(props) {
   let history = useHistory();
   let location = useLocation();
   let auth = useAuth();
@@ -43,13 +46,12 @@ function SignIn({ username, password, setUsername, setPassword }) {
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
             // alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
 
             const formData = new FormData();
             formData.append("username", values.userName);
             formData.append("password", values.password);
 
-            const url = "http://eb35d6d34069.ngrok.io/api/login/";
+            // const url = "http://eb35d6d34069.ngrok.io/api/login/";
 
             // const config = {
             //   headers: {
@@ -58,20 +60,23 @@ function SignIn({ username, password, setUsername, setPassword }) {
             //   },
             // };
 
-            axios
-              .post(url, formData)
-              .then((response) => {
-                console.log(response);
+            props.fetchUser(formData);
 
-                localStorage.setItem("user", response.data.token);
-                login();
-              })
-              .catch((error) => {
-                console.error("There was an error!", error);
-              });
+            setSubmitting(false);
+            // axios
+            //   .post(url, formData)
+            //   .then((response) => {
+            //     console.log(response);
 
-            console.log("token = = =" + localStorage.getItem("user"));
-          }, 400);
+            //     localStorage.setItem("user", response.data.token);
+            //     login();
+            //   })
+            //   .catch((error) => {
+            //     console.error("There was an error!", error);
+            //   });
+
+            // console.log("token = = =" + localStorage.getItem("user"));
+          }, 0);
         }}
       >
         {({
@@ -148,4 +153,8 @@ function SignIn({ username, password, setUsername, setPassword }) {
   );
 }
 
-export default SignIn;
+const mapDispatchToProps = {
+  fetchUser,
+};
+
+export default connect(null, mapDispatchToProps)(SignIn);
