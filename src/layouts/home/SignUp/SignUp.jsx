@@ -19,8 +19,7 @@ const SignUpValues = {
   robot: "",
 };
 
-function SignUp(props) {
-  console.log(props);
+function SignUp() {
   const [visible, setVisible] = useState(false);
 
   const [alertColor, setAlertColor] = useState("");
@@ -76,7 +75,7 @@ function SignUp(props) {
                 setAlertmessage("Ma'lumotlar moffaqiyatli kiritildi ");
                 setTimeout(() => {
                   setVisible(false);
-                }, 2000);
+                }, 1000);
               })
               .catch((error) => {
                 console.log("====================================");
