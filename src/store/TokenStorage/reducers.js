@@ -2,7 +2,7 @@ import { LOG_OUT, SET_USER } from "./actions";
 
 const initialState = {
   loggedIn: false,
-  user: "",
+  user: {},
 };
 
 export const userReducer = (state = initialState, { type, payload }) => {
@@ -12,6 +12,7 @@ export const userReducer = (state = initialState, { type, payload }) => {
         loggedIn: true,
         user: { ...payload },
       };
+
     case LOG_OUT:
       localStorage.clear();
       return {

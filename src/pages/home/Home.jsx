@@ -34,22 +34,22 @@ function Home(props) {
       progress: undefined,
     });
 
-  useEffect(() => {
-    const formData = new FormData();
+  // useEffect(() => {
+  //   const formData = new FormData();
 
-    formData.append("id", id);
-    formData.append("token", token);
+  //   formData.append("id", id);
+  //   formData.append("token", token);
 
-    Axios.post("http://b7d71dee69c7.ngrok.io/api/activate/", formData)
-      .then((res) => {
-        console.log(res);
-        notify();
-      })
-      .catch((err) => {
-        // console.log(err.response.data);
-        notifyWaring();
-      });
-  }, []);
+  //   Axios.post("http://eb35d6d34069.ngrok.io/api/activate/", formData)
+  //     .then((res) => {
+  //       console.log(res);
+  //       notify();
+  //     })
+  //     .catch((err) => {
+  //       // console.log(err.response.data);
+  //       notifyWaring();
+  //     });
+  // }, []);
 
   return (
     <div className="home-main-page">

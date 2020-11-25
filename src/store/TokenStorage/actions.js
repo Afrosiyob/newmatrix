@@ -30,7 +30,7 @@ export const fetchUser = (userInfo) => (dispatch) => {
 };
 
 export const signUserUp = (userInfo) => (dispatch) => {
-  fetch(`http://localhost:4000/users`, {
+  fetch(`http://eb35d6d34069.ngrok.io/api/register/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

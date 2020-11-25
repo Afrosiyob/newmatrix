@@ -56,9 +56,9 @@ function SignUp(props) {
             formData.append("password2", values.confirmPassword);
             formData.append("email", values.email);
             formData.append("phone", values.phone);
-            formData.append("parent_username", values.partner);
+            formData.append("parent", values.partner);
 
-            const url = "http://b7d71dee69c7.ngrok.io/api/register/";
+            const url = "http://eb35d6d34069.ngrok.io/api/register/";
             // const config = {
             //   headers: {
             //     Authorization: "Bearer my-token",
@@ -79,8 +79,11 @@ function SignUp(props) {
                 }, 2000);
               })
               .catch((error) => {
-                console.error("There was an error!", error.response.data);
-                console.error("There was an error!", error.request);
+                console.log("====================================");
+                console.log(error);
+                console.log("====================================");
+                // console.error("There was an error!", error.response.data);
+                // console.error("There was an error!", error.request);
               });
           }, 400);
         }}
