@@ -4,11 +4,11 @@ import { Formik } from "formik";
 import { Col, Form, FormGroup, Input } from "reactstrap";
 import Ripples from "react-ripples";
 
-import { useHistory, useLocation } from "react-router-dom";
-import { useAuth } from "../../../components/auth/Auth";
 import { connect } from "react-redux";
 import { fetchUser } from "../../../store/user/actions";
 import "./SignIn.scss";
+import { useHistory, useLocation } from "react-router-dom";
+import { useAuth } from "../../../components/auth/Auth";
 
 const SignInValues = {
   userName: "",
@@ -61,8 +61,11 @@ function SignIn(props) {
             // };
 
             props.fetchUser(formData);
-
+            if (props.loggedIn) {
+              login();
+            }
             setSubmitting(false);
+
             // axios
             //   .post(url, formData)
             //   .then((response) => {
@@ -76,6 +79,10 @@ function SignIn(props) {
             //   });
 
             // console.log("token = = =" + localStorage.getItem("user"));
+
+            console.log("====================================");
+            console.log(props.loggedIn);
+            console.log("====================================");
           }, 0);
         }}
       >
@@ -153,8 +160,12 @@ function SignIn(props) {
   );
 }
 
+const mapStateToProps = (state) => ({
+  loggedIn: state.userReducer.loggedIn,
+});
+
 const mapDispatchToProps = {
   fetchUser,
 };
 
-export default connect(null, mapDispatchToProps)(SignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

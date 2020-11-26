@@ -82,8 +82,12 @@ function Home(props) {
   );
 }
 
+const mapStateToProps = (state) => ({
+  loggedIn: state.userReducer.loggedIn,
+});
+
 const mapDispatchToProps = {
   autoLogin,
 };
 
-export default connect(null, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

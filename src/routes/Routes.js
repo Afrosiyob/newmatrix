@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Admin from "../pages/admin/Admin";
 import Home from "../pages/home/Home";
 // import { LoginPage } from "../pages/LoginPage";
-// import { PrivateRoute } from "./PrivateRoute";
+import { PrivateRoute } from "./PrivateRoute";
 
 function Routes() {
   return (
@@ -11,9 +11,9 @@ function Routes() {
       <Route path={["/", "/verify/:id/:token"]} exact>
         <Home />
       </Route>{" "}
-      <Route path="/admin">
+      <PrivateRoute path="/admin">
         <Admin />
-      </Route>{" "}
+      </PrivateRoute>{" "}
     </Switch>
   );
 }

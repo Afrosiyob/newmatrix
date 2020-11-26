@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "antd";
 import { Formik } from "formik";
-import * as Yup from "yup";
+
 // import { InboxOutlined } from "@ant-design/icons";
 import {
   Form,
@@ -11,9 +11,12 @@ import {
   Row,
   Col,
   CustomInput,
+  Button,
   // FormFeedback,
   // FormText,
 } from "reactstrap";
+import { connect } from "react-redux";
+import { editUserThunk } from "../../../../store/user/actions";
 
 // const { Dragger } = Upload;
 
@@ -25,23 +28,16 @@ const initialValues = {
   phonenumber: "",
   abouteme: "",
   image: "",
+  qr_code: "",
 };
 
-const userEditSchema = Yup.object().shape({
-  ism: Yup.string().required("required"),
-  familiya: Yup.string().required("required"),
-  link: Yup.string().required("required"),
-  telegram: Yup.string().required("required"),
-  phonenumber: Yup.string().required("required"),
-  abouteme: Yup.string().required("required"),
-  image: Yup.mixed().required("required"),
-});
-
-function RightInformation() {
+function RightInformation(props) {
+  console.log("bu id====================================");
+  console.log(props.user_id);
+  console.log("====================================");
   return (
     <Card>
       <Formik
-        validationSchema={userEditSchema}
         initialValues={initialValues}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
@@ -49,7 +45,16 @@ function RightInformation() {
 
             let formData = new FormData();
 
+            formData.append("first_name", values.ism);
+            formData.append("last_name", values.familiya);
             formData.append("image", values.image);
+            formData.append("about_me", values.abouteme);
+            formData.append("social_link", values.link);
+            formData.append("telegram", values.telegram);
+            formData.append("phone", values.phonenumber);
+            formData.append("qr_code", values.qr_code);
+
+            props.editUserThunk(formData);
 
             setSubmitting(false);
           }, 400);
@@ -100,12 +105,6 @@ function RightInformation() {
                       onBlur={handleBlur}
                       value={values.ism}
                     />
-
-                    {errors.ism && touched.ism ? (
-                      <p className="font-weight-bold text-danger">
-                        {errors.ism}
-                      </p>
-                    ) : null}
                   </FormGroup>
                 </Col>
                 <Col sm="12" md="6" className="mb-3">
@@ -120,11 +119,6 @@ function RightInformation() {
                       onBlur={handleBlur}
                       value={values.familiya}
                     />
-                    {errors.familiya && touched.familiya ? (
-                      <p className="font-weight-bold text-danger">
-                        {errors.familiya}
-                      </p>
-                    ) : null}
                   </FormGroup>
                 </Col>
               </Row>
@@ -141,11 +135,6 @@ function RightInformation() {
                       onBlur={handleBlur}
                       value={values.link}
                     />
-                    {errors.link && touched.link ? (
-                      <p className="font-weight-bold text-danger">
-                        {errors.link}
-                      </p>
-                    ) : null}
                   </FormGroup>
                 </Col>
                 <Col sm="12" md="6" className="mb-3">
@@ -160,11 +149,6 @@ function RightInformation() {
                       onBlur={handleBlur}
                       value={values.telegram}
                     />
-                    {errors.telegram && touched.telegram ? (
-                      <p className="font-weight-bold text-danger">
-                        {errors.telegram}
-                      </p>
-                    ) : null}
                   </FormGroup>
                 </Col>
               </Row>
@@ -187,12 +171,6 @@ function RightInformation() {
                       onBlur={handleBlur}
                       value={values.phonenumber}
                     />
-
-                    {errors.phonenumber && touched.phonenumber ? (
-                      <p className="font-weight-bold text-danger">
-                        {errors.phonenumber}
-                      </p>
-                    ) : null}
                   </FormGroup>
                 </Col>
                 <Col sm="12" md="6" className="mb-3">
@@ -213,11 +191,6 @@ function RightInformation() {
                       onBlur={handleBlur}
                       value={values.abouteme}
                     />
-                    {errors.abouteme && touched.abouteme ? (
-                      <p className="font-weight-bold text-danger">
-                        {errors.abouteme}
-                      </p>
-                    ) : null}
                   </FormGroup>
                 </Col>
               </Row>
@@ -247,21 +220,16 @@ function RightInformation() {
                       setFieldValue("image", event.currentTarget.files[0]);
                     }}
                   />
-                  {errors.image && touched.image ? (
-                    <p className="font-weight-bold text-danger">
-                      {errors.image}
-                    </p>
-                  ) : null}
                 </FormGroup>
               </div>
 
-              <button
+              <Button
                 type="submit"
                 className="btn btn-info"
                 disabled={isSubmitting}
               >
                 Submit
-              </button>
+              </Button>
             </Form>
           );
         }}
@@ -270,4 +238,12 @@ function RightInformation() {
   );
 }
 
-export default RightInformation;
+const mapStateToProps = (state) => ({
+  user_id: state.userReducer.user.id,
+});
+
+const mapDispatchToProps = {
+  editUserThunk,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RightInformation);

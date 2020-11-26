@@ -1,6 +1,6 @@
-import { LOG_OUT, SET_USER } from "./actions";
+import { EDIT_USER, LOG_OUT, SET_USER } from "./actions";
 
-const userState = {
+export const userState = {
   loggedIn: false,
   user: {},
 };
@@ -10,6 +10,11 @@ export const userReducer = (state = userState, { type, payload }) => {
     case SET_USER:
       return {
         loggedIn: true,
+        user: { ...payload },
+      };
+
+    case EDIT_USER:
+      return {
         user: { ...payload },
       };
     case LOG_OUT:

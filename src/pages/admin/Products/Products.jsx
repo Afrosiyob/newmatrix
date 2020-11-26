@@ -7,7 +7,10 @@ import { Table } from "antd";
 import ProductItem from "./ProductItem/ProductItem";
 
 import ProductRating from "./ProductRating/ProductRating";
+
 import "./Products.scss";
+import AddProducs from "./AddProducts/AddProducs";
+import { connect } from "react-redux";
 
 const columns = [
   {
@@ -89,14 +92,26 @@ const data = [
   },
 ];
 
-function Products() {
+function Products(props) {
+  console.log("====================================");
+  console.log(props.is_superuser);
+  console.log("====================================");
+
   return (
     <Container fluid>
       <h1 className="font-weight-bold w-100 mb-3">Products</h1>
       <h4 className="w-100 text-muted mb-3">Our products</h4>
-      <Table columns={columns} dataSource={data} />
+      <div className="mb-3">
+        <Table columns={columns} dataSource={data} />
+      </div>
+
+      {props.is_superuser ? <AddProducs /> : null}
     </Container>
   );
 }
 
-export default Products;
+const mapStateToProps = (state) => ({
+  is_superuser: state.userReducer.user.is_superuser,
+});
+
+export default connect(mapStateToProps, null)(Products);

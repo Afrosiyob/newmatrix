@@ -3,14 +3,14 @@ import React, { useContext, createContext, useState } from "react";
 const fakeAuth = {
   isAuthenticated: false,
   signin(cb) {
-    if (localStorage.getItem("user")) {
+    if (localStorage.getItem("token")) {
       fakeAuth.isAuthenticated = true;
     }
     setTimeout(cb, 100); // fake async
   },
   signout(cb) {
     fakeAuth.isAuthenticated = false;
-    localStorage.removeItem("user");
+    localStorage.removeItem("token");
     setTimeout(cb, 100);
   },
 };
@@ -35,7 +35,7 @@ function useProvideAuth() {
 
   const signin = (cb) => {
     return fakeAuth.signin(() => {
-      setUser("user");
+      setUser("token");
       cb();
     });
   };

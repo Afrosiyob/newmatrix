@@ -20,6 +20,7 @@ import "./HomeNavbar.scss";
 import { useTranslation } from "react-i18next";
 import ModalComponent from "../../../components/ModalComponent/ModalComponent";
 import { connect } from "react-redux";
+import { logUserOutReal } from "../../../store/user/actions";
 // import { useHistory } from "react-router-dom";
 // import { useAuth } from "../../../components/auth/Auth";
 
@@ -265,7 +266,7 @@ const HomeNavbar = (props) => {
             {!props.loggedIn ? (
               <ModalComponent buttonLabel={t(`homeNavbar.signIn`)} />
             ) : (
-              "uji bor"
+              <button onClick={props.logUserOutReal}>log out</button>
             )}
           </NavbarText>
         </Collapse>
@@ -278,4 +279,8 @@ const mapStateToProps = (state) => ({
   loggedIn: state.userReducer.loggedIn,
 });
 
-export default connect(mapStateToProps, null)(HomeNavbar);
+const mapDispatchToProps = {
+  logUserOutReal,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeNavbar);
