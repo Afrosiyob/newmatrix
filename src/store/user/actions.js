@@ -25,9 +25,7 @@ export const editUser = (payload) => {
 };
 
 export const editUserThunk = (newuserdata) => (dispatch, getState) => {
-  const url = `http://d55e3e3f2145.ngrok.io/api/update/${localStorage.getItem(
-    "user_id"
-  )}/`;
+  const url = `http://d55e3e3f2145.ngrok.io/api/update/`;
 
   Axios.put(url, newuserdata, {
     headers: {
