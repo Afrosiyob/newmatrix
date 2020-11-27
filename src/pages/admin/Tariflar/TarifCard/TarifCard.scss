@@ -1,15 +1,7 @@
 @import '../../../../style/AllStyles.scss';
-button.tarif-card-btn {
-    background-color: transparent;
-    border: 2px solid #2A00A2;
-    box-sizing: border-box;
-    outline: none;
-    color: #2A00A2;
-    @extend %anim;
-    font-size: 16px;
-    font-weight: bolder;
-    &:hover {
-        background-color: #2A00A2;
-        color: white;
+.tarif-card {
+    img.img-pay {
+        width: 100px;
+        height: auto;
     }
 }

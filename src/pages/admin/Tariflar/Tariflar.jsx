@@ -12,30 +12,7 @@ function Tariflar(props) {
     props.fetchPlans();
   }, []);
 
-  const cards = [
-    {
-      cardName: "card 1",
-      cardPrice: 100,
-    },
-    {
-      cardName: "card 2",
-      cardPrice: 200,
-    },
-    {
-      cardName: "card 3",
-      cardPrice: 300,
-    },
-    {
-      cardName: "card 4",
-      cardPrice: 400,
-    },
-    {
-      cardName: "card 5",
-      cardPrice: 500,
-    },
-  ];
-
-  console.log("====================================");
+  console.log(" card ====================================");
   console.log(props.plans);
   console.log("====================================");
 
@@ -47,12 +24,12 @@ function Tariflar(props) {
         Sizga qulay bo'lgan tarifni tanlang{" "}
       </h4>
       <Row>
-        {cards.map((item, index) => (
+        {props.plans.map((item, index) => (
           <Col sm="12" md="3" className="mb-3">
             <TarifCard
-              cardName={item.cardName}
+              cardName={item.name}
               key={index}
-              cardPrice={item.cardPrice}
+              cardPrice={item.price}
             />
           </Col>
         ))}
