@@ -16,7 +16,7 @@ function Tariflar() {
         Sizga qulay bo'lgan tarifni tanlang{" "}
       </h4>
       <Row>
-        <Col sm="12" md="3">
+        <Col sm="12" md="3" className="mb-3">
           <TarifCard />
         </Col>
         <Col sm="12" md="3">
