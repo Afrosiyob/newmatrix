@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 import { Container, Row, Col } from "reactstrap";
+import { fetchPlans } from "../../../store/plans/actions";
 import TarifCard from "./TarifCard/TarifCard";
 
 import "./Tariflar.scss";
 
-function Tariflar() {
+function Tariflar(props) {
+  useEffect(() => {
+    props.fetchPlans();
+  }, []);
+
   const cards = [
     {
       cardName: "card 1",
@@ -30,6 +35,10 @@ function Tariflar() {
     },
   ];
 
+  console.log("====================================");
+  console.log(props.plans);
+  console.log("====================================");
+
   return (
     <Container fluid>
       <h1 className="font-weight-bold w-100 mb-3"> Tariflar </h1>
@@ -51,5 +60,15 @@ function Tariflar() {
     </Container>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    plans: state.setPlansReducers.plans,
+  };
+};
+
+const mapDispatchToProps = {
+  fetchPlans,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tariflar);

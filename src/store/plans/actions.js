@@ -9,15 +9,22 @@ export const setPlans = (payload) => {
   };
 };
 
-export const fetchPlans = (plans) => (dispatch) => {
-  const url = "url";
+export const fetchPlans = () => (dispatch) => {
+  const url = `${process.env.REACT_APP_SERVER_URL}/api/plan/`;
 
-  Axios.post(url, plans)
+  Axios.get(url, {
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Token ${localStorage.getItem("token")}`,
+    },
+  })
     .then((res) => {
       console.log("====================================");
       console.log(res);
       console.log("====================================");
-      dispatch(setPlans(res));
+
+      dispatch(setPlans(res.data));
     })
     .catch((err) => {
       console.log("====================================");

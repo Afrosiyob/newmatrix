@@ -1,7 +1,7 @@
 import { SET_PLANS } from "./actions";
 
 const plansState = {
-  plans: {},
+  plans: [],
 };
 
 export const setPlansReducers = (state = plansState, { type, payload }) => {
