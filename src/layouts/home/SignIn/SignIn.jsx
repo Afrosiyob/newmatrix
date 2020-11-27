@@ -45,7 +45,7 @@ function SignIn(props) {
         // }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            // alert(JSON.stringify(values, null, 2));
+            alert(JSON.stringify(values, null, 2));
 
             const formData = new FormData();
             formData.append("username", values.userName);

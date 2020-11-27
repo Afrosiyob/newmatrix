@@ -4,24 +4,23 @@ import Ripples from "react-ripples";
 
 import "./TarifCard.scss";
 
-function TarifCard(props) {
+function TarifCard({ cardName, cardPrice }) {
   return (
     <Card
       bordered={false}
       className="rounded d-flex flex-column justify-content-center align-items-center align-content-center rounded"
     >
-      <h3 className="text-center">title</h3>
-      <p className="text-center">subtitle</p>
-      <p className="text-center">subtitle</p>
-      <p className="text-center">subtitle</p>
+      <h3 className="text-center text-muted text-uppercase"> {cardName}</h3>
+
+      <h2 className="text-center font-weight-bold"> {cardPrice} </h2>
 
       <div className="w-100 d-flex justify-content-between">
         <Ripples color="rgba(255,255,255,0.5)" className=" rounded-pill">
-          <button className="mx-1  tarif-card-btn rounded-pill"> payme </button>
+          payme
         </Ripples>
 
         <Ripples color="rgba(255,255,255,0.5)" className=" rounded-pill">
-          <button className="mx-1 tarif-card-btn rounded-pill"> payme </button>
+          click
         </Ripples>
       </div>
     </Card>
