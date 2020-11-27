@@ -18,12 +18,11 @@ import TopNavbar from "../../components/TopNavbar/TopNavbar";
 import { Link, Route, Switch } from "react-router-dom";
 
 import Team from "./Team/Team";
-
-import Finans from "./Finans/Finans";
 import Investment from "./Investment/investment";
 import Settings from "./Settings/Settings";
 import Statistics from "./Statistics/Statistics";
 import Products from "./Products/Products";
+import Tariflar from "./Tariflar/Tariflar";
 
 const { Sider, Content, Footer } = Layout;
 
@@ -44,7 +43,7 @@ function Admin() {
     },
     {
       icon: <LineChartOutlined />,
-      text: "Statistics ",
+      text: "Statistics",
       url: "/admin",
     },
     {
@@ -54,22 +53,22 @@ function Admin() {
     },
     {
       icon: <BarcodeOutlined />,
-      text: "Products ",
+      text: "Products",
       url: "/admin/products",
     },
     {
       icon: <RiseOutlined />,
-      text: "Finans ",
-      url: "/admin/finans",
+      text: "Tariflar",
+      url: "/admin/tariflar",
     },
     {
       icon: <DingdingOutlined />,
-      text: "My investment ",
+      text: "My investment",
       url: "/admin/investment",
     },
     {
       icon: <SettingOutlined />,
-      text: "Settings ",
+      text: "Settings",
       url: "/admin/settings",
     },
   ];
@@ -112,7 +111,7 @@ function Admin() {
               <Route path="/admin" exact component={Statistics} />
               <Route path="/admin/team" component={Team} />
               <Route path="/admin/products" component={Products} />
-              <Route path="/admin/finans" component={Finans} />
+              <Route path="/admin/tariflar" component={Tariflar} />
               <Route path="/admin/investment" component={Investment} />
               <Route path="/admin/settings" component={Settings} />
             </Switch>

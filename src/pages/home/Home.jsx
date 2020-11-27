@@ -13,10 +13,6 @@ import { connect } from "react-redux";
 import { autoLogin } from "../../store/user/actions";
 
 function Home(props) {
-  useEffect(() => {
-    props.autoLogin();
-  }, []);
-
   // const { id, token } = useParams();
 
   // const notify = () =>
@@ -82,12 +78,4 @@ function Home(props) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  loggedIn: state.userReducer.loggedIn,
-});
-
-const mapDispatchToProps = {
-  autoLogin,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;

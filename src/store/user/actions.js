@@ -25,7 +25,7 @@ export const editUser = (payload) => {
 };
 
 export const editUserThunk = (newuserdata) => (dispatch, getState) => {
-  const url = `http://d55e3e3f2145.ngrok.io/api/update/`;
+  const url = `${process.env.REACT_APP_SERVER_URL}/api/update/`;
 
   Axios.put(url, newuserdata, {
     headers: {
@@ -46,7 +46,7 @@ export const editUserThunk = (newuserdata) => (dispatch, getState) => {
 };
 
 export const fetchUser = (userInfo) => (dispatch) => {
-  const url = `http://d55e3e3f2145.ngrok.io/api/login/`;
+  const url = `${process.env.REACT_APP_SERVER_URL}/api/login/`;
   Axios.post(url, userInfo)
     .then((res) => {
       console.log(res);
@@ -62,7 +62,7 @@ export const fetchUser = (userInfo) => (dispatch) => {
 };
 
 export const logUserOutReal = () => (dispatch) => {
-  const url = `http://d55e3e3f2145.ngrok.io/api/logout/`;
+  const url = `${process.env.REACT_APP_SERVER_URL}/api/logout/`;
   Axios.post(url, {
     headers: {
       "Content-Type": "application/json",
@@ -85,7 +85,7 @@ export const logUserOutReal = () => (dispatch) => {
 };
 
 export const signUserUp = (userInfo) => (dispath) => {
-  const url = `http://d55e3e3f2145.ngrok.io/api/register/`;
+  const url = `${process.env.REACT_APP_SERVER_URL}/api/register/`;
 
   Axios.post(url, userInfo)
     .then((res) => {
@@ -109,7 +109,7 @@ export const signUserUp = (userInfo) => (dispath) => {
 };
 
 export const autoLogin = () => (dispatch) => {
-  const url = `http://d55e3e3f2145.ngrok.io/api/login/`;
+  const url = `${process.env.REACT_APP_SERVER_URL}/api/login/`;
 
   Axios.get(url, {
     headers: {
