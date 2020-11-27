@@ -12,9 +12,23 @@ function Tariflar(props) {
     props.fetchPlans();
   }, []);
 
-  console.log(" card ====================================");
-  console.log(props.plans);
-  console.log("====================================");
+  const fakeCards = [
+    {
+      id: 1,
+      name: "name 1",
+      price: 3000,
+    },
+    {
+      id: 2,
+      name: "name 2",
+      price: 3000,
+    },
+    {
+      id: 3,
+      name: "name 3",
+      price: 3000,
+    },
+  ];
 
   return (
     <Container fluid>
@@ -24,7 +38,7 @@ function Tariflar(props) {
         Sizga qulay bo'lgan tarifni tanlang{" "}
       </h4>
       <Row>
-        {props.plans.map((item, index) => (
+        {fakeCards.map((item, index) => (
           <Col sm="12" md="3" className="mb-3">
             <TarifCard
               cardName={item.name}

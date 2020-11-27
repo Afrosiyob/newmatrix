@@ -10,25 +10,27 @@ export const setPayment = (payload) => {
 };
 
 export const sendPayment = (paymentInfo) => (dispatch) => {
-  const url = `${process.env.REACT_APP_SERVER_URL}/api/buy/`;
+  console.log(paymentInfo);
 
-  Axios.post(url, paymentInfo)
-    .then((res) => {
-      console.log("====================================");
-      console.log(res);
-      console.log("====================================");
+  // const url = `${process.env.REACT_APP_SERVER_URL}/api/buy/`;
 
-      //   localStorage.setItem("token", res.token);
-      console.log("====================================");
-      console.log(res);
-      console.log("====================================");
-      //   dispatch(setPayment(ress.));
+  // Axios.post(url, paymentInfo)
+  //   .then((res) => {
+  //     console.log("====================================");
+  //     console.log(res);
+  //     console.log("====================================");
 
-      alert("malumotlar mofaqqiyatli junatildi");
-    })
-    .catch((err) => {
-      console.log("====================================");
-      console.log(err);
-      console.log("====================================");
-    });
+  //     //   localStorage.setItem("token", res.token);
+  //     console.log("====================================");
+  //     console.log(res);
+  //     console.log("====================================");
+  //     //   dispatch(setPayment(ress.));
+
+  //     alert("malumotlar mofaqqiyatli junatildi");
+  //   })
+  //   .catch((err) => {
+  //     console.log("====================================");
+  //     console.log(err);
+  //     console.log("====================================");
+  //   });
 };

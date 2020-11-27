@@ -13,19 +13,19 @@ import { sendPayment } from "../../../../store/payment/actions";
 
 import "./TarifCard.scss";
 
-function TarifCard({ cardName, cardPrice, cardId }) {
+function TarifCard(props) {
   const clickHandle = (type, id) => {
     // const formData = new FormData();
     // formData.append("type", type);
     // formData.append("plan_id", id);
-    // sendPayment(formData);
-    alert(type, id);
+    props.sendPayment();
+    // alert(type, id);
   };
 
   const menu = (
     <Menu>
       <Menu.Item>
-        <button onClick={clickHandle("click", cardId)}>
+        <button onClick={clickHandle("click", props.cardId)}>
           <img className="img-pay" src={ClickLogo} alt="click logo" />
         </button>
       </Menu.Item>
@@ -42,8 +42,11 @@ function TarifCard({ cardName, cardPrice, cardId }) {
       bordered={false}
       className="rounded d-flex flex-column justify-content-center align-items-center align-content-center rounded tarif-card"
     >
-      <h3 className="text-center text-muted text-uppercase"> {cardName} </h3>
-      <h2 className="text-center font-weight-bold"> {cardPrice}</h2>
+      <h3 className="text-center text-muted text-uppercase">
+        {" "}
+        {props.cardName}{" "}
+      </h3>
+      <h2 className="text-center font-weight-bold"> {props.cardPrice}</h2>
       <button onClick={clickHandle}>click</button>
       <div className="w-100 mt-3 d-flex justify-content-between">
         <Dropdown overlay={menu}>
