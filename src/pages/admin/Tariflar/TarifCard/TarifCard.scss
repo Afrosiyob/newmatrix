@@ -1,7 +1,9 @@
 @import '../../../../style/AllStyles.scss';
-.tarif-card {
-    img.img-pay {
-        width: 100px;
-        height: auto;
+img.img-pay {
+    width: 80px;
+    height: auto;
+    margin: 0 10px;
+    &:hover {
+        cursor: pointer;
     }
 }

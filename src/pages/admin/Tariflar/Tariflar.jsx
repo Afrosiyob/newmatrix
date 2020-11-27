@@ -30,6 +30,7 @@ function Tariflar(props) {
               cardName={item.name}
               key={index}
               cardPrice={item.price}
+              cardId={item.id}
             />
           </Col>
         ))}
