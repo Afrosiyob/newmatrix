@@ -15,11 +15,11 @@ import "./TarifCard.scss";
 
 function TarifCard({ cardName, cardPrice, cardId }) {
   const clickHandle = (type, id) => {
-    const formData = new FormData();
-    formData.append("type", type);
-    formData.append("plan_id", id);
-    sendPayment(formData);
-    // alert("wfewefwe");
+    // const formData = new FormData();
+    // formData.append("type", type);
+    // formData.append("plan_id", id);
+    // sendPayment(formData);
+    alert(type, id);
   };
 
   const menu = (
