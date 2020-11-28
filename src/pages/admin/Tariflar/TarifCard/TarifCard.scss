@@ -7,3 +7,34 @@ img.img-pay {
         cursor: pointer;
     }
 }
+
+.plans-card-item {
+    background-color: white;
+    position: relative;
+    .header-title {
+        color: white;
+        background-color: #2A00A2;
+    }
+    .price-title {
+        transition: all 0.2s linear;
+        line-height: 50%;
+        span {
+            font-size: 15px;
+            font-style: italic;
+        }
+    }
+    .custom-button {
+        background-color: white;
+        transition: all 0.2s linear;
+        color: #2A00A2;
+        font-weight: bold;
+        padding: 5px;
+        width: 75%;
+        border: 2px solid #2A00A2;
+        outline: none;
+        &:hover {
+            background-color: #2A00A2;
+            color: white;
+        }
+    }
+}

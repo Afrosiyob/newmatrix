@@ -20,11 +20,10 @@ export const fetchPlans = () => (dispatch) => {
     },
   })
     .then((res) => {
-      console.log("====================================");
-      console.log(res);
-      console.log("====================================");
-
       dispatch(setPlans(res.data));
+      console.log("====================================");
+      console.log(res.data);
+      console.log("====================================");
     })
     .catch((err) => {
       console.log("====================================");

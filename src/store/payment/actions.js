@@ -10,27 +10,29 @@ export const setPayment = (payload) => {
 };
 
 export const sendPayment = (paymentInfo) => (dispatch) => {
-  console.log(paymentInfo);
+  // console.log(paymentInfo);
 
-  // const url = `${process.env.REACT_APP_SERVER_URL}/api/buy/`;
+  // dispatch(setPayment(paymentInfo));
 
-  // Axios.post(url, paymentInfo)
-  //   .then((res) => {
-  //     console.log("====================================");
-  //     console.log(res);
-  //     console.log("====================================");
+  const url = `${process.env.REACT_APP_SERVER_URL}/api/buy/`;
 
-  //     //   localStorage.setItem("token", res.token);
-  //     console.log("====================================");
-  //     console.log(res);
-  //     console.log("====================================");
-  //     //   dispatch(setPayment(ress.));
+  Axios.post(url, paymentInfo, {
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Token ${localStorage.getItem("token")}`,
+    },
+  })
+    .then((res) => {
+      //   localStorage.setItem("token", res.token);
 
-  //     alert("malumotlar mofaqqiyatli junatildi");
-  //   })
-  //   .catch((err) => {
-  //     console.log("====================================");
-  //     console.log(err);
-  //     console.log("====================================");
-  //   });
+      dispatch(setPayment(res.data));
+
+      alert("malumotlar mofaqqiyatli junatildi");
+    })
+    .catch((err) => {
+      console.log("====================================");
+      console.log(err);
+      console.log("====================================");
+    });
 };

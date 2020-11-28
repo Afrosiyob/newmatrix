@@ -84,26 +84,24 @@ export const logUserOutReal = () => (dispatch) => {
     });
 };
 
-export const signUserUp = (userInfo) => (dispath) => {
+export const signUserUp = (userInfo) => (dispatch) => {
   const url = `${process.env.REACT_APP_SERVER_URL}/api/register/`;
 
   Axios.post(url, userInfo)
     .then((res) => {
-      console.log("====================================");
-      console.log(res);
-      console.log("====================================");
-
       //   localStorage.setItem("token", res.token);
       //   console.log("====================================");
       //   console.log(res.user);
       //   console.log("====================================");
       //   dispatch(setUser(ress.user));
-
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("user_id", res.data.user.id);
+      dispatch(setUser(res.data));
       alert("malumotlar mofaqqiyatli junatildi");
     })
     .catch((err) => {
       console.log("====================================");
-      console.log(err.response.data);
+      console.log(err);
       console.log("====================================");
     });
 };

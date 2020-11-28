@@ -5,7 +5,9 @@ import { autoLogin } from "./store/user/actions";
 
 function App(props) {
   useEffect(() => {
-    props.autoLogin();
+    if (localStorage.getItem("token")) {
+      props.autoLogin();
+    }
   }, []);
   return <Routes />;
 }
