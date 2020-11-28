@@ -20,7 +20,7 @@ function SignIn(props) {
   let location = useLocation();
   let auth = useAuth();
 
-  let { from } = location.state || { from: { pathname: "/admin" } };
+  let { from } = location.state || { from: { pathname: "/" } };
   let login = () => {
     auth.signin(() => {
       history.replace(from);

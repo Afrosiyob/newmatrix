@@ -21,7 +21,7 @@ function Tariflar(props) {
       </h4>
       <Row>
         {props.plans.map((item, index) => (
-          <Col sm="12" md="3" lg="2" className="mb-3">
+          <Col sm="12" md="3" className="mb-3">
             <TarifCard
               cardName={item.name}
               key={index}

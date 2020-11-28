@@ -5,8 +5,7 @@ import Ripples from "react-ripples";
 import ClickLogo from "../../../../assets/images/Click.png";
 import PaymeLogo from "../../../../assets/images/payme.png";
 
-import { Menu, Dropdown, Radio, Card, Modal, Button } from "antd";
-import { DownOutlined } from "@ant-design/icons";
+import { Menu, Radio, Modal, Button } from "antd";
 
 import { connect } from "react-redux";
 import { sendPayment } from "../../../../store/payment/actions";
@@ -16,9 +15,9 @@ import "./TarifCard.scss";
 function TarifCard(props) {
   const [modalvisible, setmodalvisible] = useState(false);
   const [modalLoading, setmodalLoading] = useState(false);
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState("click");
+
   const onChange = (e) => {
-    console.log("radio checked", e.target.value);
     setValue(e.target.value);
   };
 
@@ -27,10 +26,14 @@ function TarifCard(props) {
   };
 
   const handleOk = (e) => {
-    console.log(e);
     setTimeout(() => {
       setmodalvisible(false);
       setmodalLoading(false);
+
+      const formData = new FormData();
+      formData.append("type", value);
+      formData.append("plan_id", props.cardId);
+      props.sendPayment(formData);
     }, 1000);
   };
 
@@ -39,12 +42,7 @@ function TarifCard(props) {
     setmodalvisible(false);
   };
 
-  const clickHandle = (type, id) => {
-    const formData = new FormData();
-    formData.append("type", type);
-    formData.append("plan_id", id);
-    props.sendPayment(formData);
-  };
+  const clickHandle = (type, id) => {};
 
   const menu = (
     <Menu>
@@ -91,9 +89,10 @@ function TarifCard(props) {
         title="To'lov turini tanlash"
         visible={modalvisible}
         onOk={handleOk}
+        centered
         onCancel={handleCancel}
         footer={[
-          <Button key="back" onClick={handleCancel} disabled={true}>
+          <Button key="back" onClick={handleCancel}>
             Bekor qilish
           </Button>,
           <Button
@@ -101,15 +100,23 @@ function TarifCard(props) {
             type="primary"
             loading={modalLoading}
             onClick={handleOk}
-            disabled={true}
           >
             Sotib olish
           </Button>,
         ]}
       >
-        <Radio.Group onChange={onChange} value={value}>
-          <Radio value={1}>click</Radio>
-          <Radio value={2}>payme</Radio>
+        <Radio.Group
+          onChange={onChange}
+          value={value}
+          size="large"
+          className="w-100 d-flex justify-content-center"
+        >
+          <Radio.Button value="click" className="select-img-payment">
+            <img src={ClickLogo} alt="click" />
+          </Radio.Button>
+          <Radio.Button value="payme" className="select-img-payment">
+            <img src={PaymeLogo} alt="payme" />
+          </Radio.Button>
         </Radio.Group>
       </Modal>
     </div>
