@@ -1,48 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Modal, Button } from "antd";
 
-export default class AntModal extends React.Component {
-  state = { visible: false };
+function AntModal({ userEmail, userLink, userName, userTelegram, userImage }) {
+  const [visible, setvisible] = useState(false);
 
-  showModal = () => {
-    this.setState({
-      visible: true,
-    });
+  const showModal = () => {
+    setvisible(true);
   };
 
-  handleOk = (e) => {
+  const handleOk = (e) => {
     console.log(e);
-    this.setState({
-      visible: false,
-    });
+    setvisible(false);
   };
 
-  handleCancel = (e) => {
+  const handleCancel = (e) => {
     console.log(e);
-    this.setState({
-      visible: false,
-    });
+    setvisible(false);
   };
 
-  render() {
-    return (
-      <>
-        <Button type="primary" onClick={this.showModal}>
-          Open Modal
-        </Button>
-        <Modal
-          centered={true}
-          title="Basic Modal"
-          visible={this.state.visible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
-        >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-        </Modal>
-      </>
-    );
-  }
+  return (
+    <div>
+      <Button type="primary" onClick={showModal}>
+        Information
+      </Button>
+      <Modal
+        centered={true}
+        title={userName}
+        visible={visible}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <p> {userEmail} </p>
+        <p> {userLink} </p>
+        <p> {userTelegram} </p>
+      </Modal>
+    </div>
+  );
 }
+
+export default AntModal;

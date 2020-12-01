@@ -11,10 +11,6 @@ function Team(props) {
     props.fetchTree();
   }, []);
 
-  console.log("tree data ====================================");
-  console.log(props.treeData);
-  console.log("====================================");
-
   return (
     <Container fluid>
       <h1 className="font-weight-bold w-100 mb-3"> My team </h1>
