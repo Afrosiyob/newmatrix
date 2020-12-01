@@ -11,20 +11,30 @@ function Team(props) {
     props.fetchTree();
   }, []);
 
+  console.log("tree data ====================================");
+  console.log(props.treeData);
+  console.log("====================================");
+
   return (
     <Container fluid>
       <h1 className="font-weight-bold w-100 mb-3"> My team </h1>
 
       <div>
         <h4 className="w-100 text-muted mb-3">All team members</h4>
-        <TeamTable />
+        <TeamTable treeData={props.treeData} />
       </div>
     </Container>
   );
 }
 
+const mapStateToProps = (state) => {
+  return {
+    treeData: state.treeReducer.treeData,
+  };
+};
+
 const mapDispatchToProps = {
   fetchTree,
 };
 
-export default connect(null, mapDispatchToProps)(Team);
+export default connect(mapStateToProps, mapDispatchToProps)(Team);

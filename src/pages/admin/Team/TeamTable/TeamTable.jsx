@@ -4,256 +4,77 @@ import { Table } from "antd";
 import AntModal from "./AntModal/AntModal";
 import TeamData from "../TeamData/TeamData";
 
-const columns = [
-  {
-    title: "Login",
-    dataIndex: "login",
-    key: "login",
-    fixed: "left",
-  },
-  {
-    title: "Telegram",
-    dataIndex: "telegram",
-    key: "telegram",
-  },
-  {
-    title: "Link",
-    dataIndex: "link",
-    key: "link",
-  },
-  {
-    title: "Turnover",
-    dataIndex: "turnover",
-    width: "10%",
-    key: "turnover",
-  },
-  {
-    title: "Partners",
-    dataIndex: "partners",
-    key: "partners",
-    width: "10%",
-  },
-  {
-    title: "About",
-    dataIndex: "about",
-    key: "about",
-    width: "10%",
-    fixed: "right",
-  },
-];
-
-const data = [
-  {
-    key: 1,
-    login: (
-      <TeamData
-        image={
-          "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-        }
-        name={"Leo"}
-      />
-    ),
-    telegram: "@telegram",
-    link: "link.com",
-    turnover: 12,
-    partners: 55,
-    address: "New York No. 1 Lake Park",
-    about: <AntModal />,
-    children: [
-      {
-        key: 11,
-        login: (
-          <TeamData
-            image={
-              "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-            }
-            name={"Leo"}
-          />
-        ),
-        age: 42,
-        address: "New York No. 2 Lake Park",
-      },
-      {
-        key: 12,
-        login: (
-          <TeamData
-            image={
-              "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-            }
-            name={"Leo"}
-          />
-        ),
-        age: 30,
-        address: "New York No. 3 Lake Park",
-        children: [
-          {
-            key: 121,
-            login: (
-              <TeamData
-                image={
-                  "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-                }
-                name={"Leo"}
-              />
-            ),
-            age: 16,
-            address: "New York No. 3 Lake Park",
-          },
-        ],
-      },
-      {
-        key: 13,
-        login: (
-          <TeamData
-            image={
-              "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-            }
-            name={"Leo"}
-          />
-        ),
-        age: 72,
-        address: "London No. 1 Lake Park",
-        children: [
-          {
-            key: 131,
-            login: (
-              <TeamData
-                image={
-                  "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-                }
-                name={"Leo"}
-              />
-            ),
-            age: 42,
-            address: "London No. 2 Lake Park",
-            children: [
-              {
-                key: 1311,
-                login: (
-                  <TeamData
-                    image={
-                      "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-                    }
-                    name={"Leo"}
-                  />
-                ),
-                age: 25,
-                address: "London No. 3 Lake Park",
-                children: [
-                  {
-                    key: 1312,
-                    login: "Jim Green jr.",
-                    age: 25,
-                    address: "London No. 3 Lake Park",
-                    children: [
-                      {
-                        key: 1313,
-                        login: "Jim Green jr.",
-                        age: 25,
-                        address: "London No. 3 Lake Park",
-                      },
-                      {
-                        key: 1314,
-                        login: "Jimmy Green sr.",
-                        age: 18,
-                        address: "London No. 4 Lake Park",
-                      },
-                    ],
-                  },
-                  {
-                    key: 1312,
-                    login: "Jimmy Green sr.",
-                    age: 18,
-                    address: "London No. 4 Lake Park",
-                  },
-                ],
-              },
-              {
-                key: 1312,
-                login: "Jimmy Green sr.",
-                age: 18,
-                address: "London No. 4 Lake Park",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    key: 2,
-    login: "Joe Black",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    about: <AntModal />,
-  },
-  {
-    key: 3,
-    login: "Joe Black",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-  },
-  {
-    key: 4,
-    login: (
-      <TeamData
-        image={
-          "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-        }
-        name={"Leo"}
-      />
-    ),
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-  },
-  {
-    key: 5,
-    login: "Joe Black",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-  },
-  {
-    key: 6,
-    login: "Joe Black",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-  },
-  {
-    key: 7,
-    login: "Joe Black",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-  },
-  {
-    key: 8,
-    login: "Joe Black",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-  },
-  {
-    key: 9,
-    login: "Joe Black",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-  },
-  {
-    key: 10,
-    login: "Joe Black",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-  },
-  {
-    key: 11,
-    login: "Joe Black",
-    age: 32,
-    ageTwo: 66,
-    address: "Sidney No. 1 Lake Park",
-  },
-];
-
 // rowSelection objects indicates the need for row selection
 
-export function TeamTable() {
+export function TeamTable({ treeData }) {
+  const columns = [
+    {
+      title: "Login",
+      dataIndex: "login",
+      key: "login",
+      fixed: "left",
+    },
+    {
+      title: "Telegram",
+      dataIndex: "telegram",
+      key: "telegram",
+    },
+    {
+      title: "Link",
+      dataIndex: "link",
+      key: "link",
+    },
+
+    {
+      title: "Partners",
+      dataIndex: "partners",
+      key: "partners",
+      width: "10%",
+    },
+    {
+      title: "About",
+      dataIndex: "about",
+      key: "about",
+      width: "10%",
+      fixed: "right",
+    },
+  ];
+
+  const data = [];
+
+  console.log("yangi mazgi ====================================");
+  console.log(treeData);
+  console.log("====================================");
+
+  treeData.children.forEach((item, index) => {
+    data.push({
+      key: index,
+      login: <TeamData image={item.image} name={item.username} />,
+      telegram: item.telegram,
+      link: item.social_link,
+
+      partners: 55,
+      address: "New York No. 1 Lake Park",
+      about: <AntModal />,
+
+      children: [
+        {
+          key: 11,
+          login: (
+            <TeamData
+              image={
+                "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+              }
+              name={"Leo"}
+            />
+          ),
+          age: 42,
+          address: "New York No. 2 Lake Park",
+        },
+      ],
+    });
+  });
+
   return (
     <>
       <Table columns={columns} dataSource={data} scroll={{ x: 1500, y: 500 }} />
