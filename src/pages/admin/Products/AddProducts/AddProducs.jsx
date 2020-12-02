@@ -12,7 +12,10 @@ import {
   Col,
 } from "reactstrap";
 import { Card } from "antd";
-function AddProducs() {
+import { connect } from "react-redux";
+import { addProductThunk } from "../../../../store/products/actions";
+
+function AddProducs(props) {
   return (
     <div>
       <Card bordered={false}>
@@ -38,6 +41,15 @@ function AddProducs() {
             setTimeout(() => {
               alert(JSON.stringify(values, null, 2));
               setSubmitting(false);
+              props.addProductThunk(values);
+
+              const formData = new FormData();
+
+              formData.append('name', values.product_name);
+              formData.append('description', values.product_description);
+              formData.append('product')
+
+
             }, 400);
           }}
         >
@@ -112,4 +124,8 @@ function AddProducs() {
   );
 }
 
-export default AddProducs;
+const mapDispatchToProps = {
+  addProductThunk,
+};
+
+export default connect(null, mapDispatchToProps)(AddProducs);

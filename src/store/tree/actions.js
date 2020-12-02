@@ -12,7 +12,7 @@ export const setTree = (payload) => {
 export const fetchTree = () => (dispatch) => {
   const url = `${
     process.env.REACT_APP_SERVER_URL
-  }/api/get-tree/${localStorage.getItem("user_id")}/`;
+  }/api/tree/${localStorage.getItem("user_id")}/`;
 
   Axios.get(url, {
     headers: {

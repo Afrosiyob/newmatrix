@@ -45,7 +45,7 @@ export const editUserThunk = (newuserdata) => (dispatch, getState) => {
     });
 };
 
-export const fetchUser = (userInfo) => (dispatch) => {
+export const fetchUser = (userInfo, location, history) => (dispatch) => {
   const url = `${process.env.REACT_APP_SERVER_URL}/api/login/`;
   Axios.post(url, userInfo)
     .then((res) => {
@@ -53,6 +53,13 @@ export const fetchUser = (userInfo) => (dispatch) => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user_id", res.data.user.id);
       dispatch(setUser(res.data));
+      if (location.state) {
+        history.replace(location.state?.from?.pathname);
+        window.location = location.state?.from?.pathname;
+      } else {
+        history.replace("/");
+        window.location = "/";
+      }
     })
     .catch((err) => {
       console.log("====================================");

@@ -4,7 +4,8 @@ import { Button, Avatar, Badge, Image } from "antd";
 import "./TopNavbar.scss";
 import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
-function TopNavbar({ toggle, collapsed }) {
+import { connect } from "react-redux";
+function TopNavbar({ toggle, collapsed, user }) {
   const { i18n } = useTranslation();
 
   const [lang, setLang] = useState(false);
@@ -21,7 +22,7 @@ function TopNavbar({ toggle, collapsed }) {
         {" "}
         {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}{" "}
       </Button>{" "}
-      <div>
+      <div className="d-flex">
         <Button
           onClick={toggleLang}
           style={{ marginRight: "15px", textTransform: "uppercase" }}
@@ -29,12 +30,15 @@ function TopNavbar({ toggle, collapsed }) {
           {i18n.language === "uz" ? "ru" : "uz"}
         </Button>
 
+        <p className="font-weight-bold mx-2">
+          {" "}
+          {user.user.username ? user.user.username : null}{" "}
+        </p>
+
         <Badge count={1}>
           <Avatar
             size={40}
-            src={
-              <Image src="https://avatars2.githubusercontent.com/u/45900728?s=460&u=ecf18e8e6d8dc738e132acbc29fbc187cbfdf6fe&v=4" />
-            }
+            src={<Image src={user.user.image ? user.user.image : null} />}
           />
         </Badge>
       </div>
@@ -42,4 +46,10 @@ function TopNavbar({ toggle, collapsed }) {
   );
 }
 
-export default TopNavbar;
+const mapStateToProps = (state) => {
+  return {
+    user: state.userReducer.user,
+  };
+};
+
+export default connect(mapStateToProps, null)(TopNavbar);

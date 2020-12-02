@@ -60,10 +60,7 @@ function SignIn(props) {
             //   },
             // };
 
-            props.fetchUser(formData);
-            if (props.loggedIn) {
-              login();
-            }
+            props.fetchUser(formData, location, history);
             setSubmitting(false);
 
             // axios
