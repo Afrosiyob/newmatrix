@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 import { Container, Row, Col } from "reactstrap";
+import TitleHamlet from "../../../components/TitleHamlet/TitleHamlet";
 import { fetchPlans } from "../../../store/plans/actions";
 import TarifCard from "./TarifCard/TarifCard";
 
@@ -14,6 +15,7 @@ function Tariflar(props) {
 
   return (
     <Container fluid>
+      <TitleHamlet title="Plans" />
       <h1 className="font-weight-bold w-100 mb-3"> Tariflar </h1>
       <h4 className="w-100 text-muted mb-3">
         {" "}

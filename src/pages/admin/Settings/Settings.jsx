@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
+import TitleHamlet from "../../../components/TitleHamlet/TitleHamlet";
 import LeftInformation from "./LeftInformation/LeftInformation";
 import RightInformation from "./RightInformation/RightInformation";
 import "./Settings.scss";
@@ -7,6 +8,7 @@ import "./Settings.scss";
 function Settings() {
   return (
     <Container fluid>
+      <TitleHamlet title="Settings" />
       <h1 className="font-weight-bold w-100 mb-3"> Setting </h1>
       <Row>
         <Col sm="12" md="3">

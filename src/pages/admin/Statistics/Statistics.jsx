@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
+import TitleHamlet from "../../../components/TitleHamlet/TitleHamlet";
 import StatisticCard from "./StatisticCard/StatisticCard";
 import StatisticChart from "./StatisticChart/StatisticChart";
 
@@ -41,6 +42,8 @@ function Statistics(props) {
 
     return (
       <Container fluid>
+        <TitleHamlet title="Statistics" />
+
         <h1 className="font-weight-bold w-100 mb-3">Welcome</h1>
 
         <Row className="mb-3">

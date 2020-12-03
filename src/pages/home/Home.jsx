@@ -7,8 +7,10 @@ import HomeNavbar from "../../layouts/home/HomeNavbar/HomeNavbar";
 import HomePdf from "../../layouts/home/HomePdf/HomePdf";
 import HomeReg from "../../layouts/home/HomeReg/HomeReg";
 import { ToastContainer } from "react-toastify";
-import "./Home.scss";
+
 import { connect } from "react-redux";
+import TitleHamlet from "../../components/TitleHamlet/TitleHamlet";
+import "./Home.scss";
 
 function Home(props) {
   // const { id, token } = useParams();
@@ -53,6 +55,7 @@ function Home(props) {
 
   return (
     <div className="home-main-page">
+      <TitleHamlet title="Matrix" />
       <ToastContainer
         position="top-right"
         autoClose={5000}

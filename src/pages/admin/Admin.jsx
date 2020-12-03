@@ -20,6 +20,7 @@ import Settings from "./Settings/Settings";
 import Statistics from "./Statistics/Statistics";
 import Products from "./Products/Products";
 import Tariflar from "./Tariflar/Tariflar";
+import TitleHamlet from "../../components/TitleHamlet/TitleHamlet";
 
 const { Sider, Content, Footer } = Layout;
 
@@ -67,6 +68,8 @@ function Admin() {
 
   return (
     <Layout style={{ height: "100vh" }}>
+      <TitleHamlet title="Admin" />
+
       <Sider
         trigger={null}
         style={{

@@ -5,6 +5,7 @@ import { TeamTable } from "./TeamTable/TeamTable";
 import "./Team.scss";
 import { connect } from "react-redux";
 import { fetchTree } from "../../../store/tree/actions";
+import TitleHamlet from "../../../components/TitleHamlet/TitleHamlet";
 
 function Team(props) {
   useEffect(() => {
@@ -13,6 +14,7 @@ function Team(props) {
 
   return (
     <Container fluid>
+      <TitleHamlet title="Team" />
       <h1 className="font-weight-bold w-100 mb-3"> My team </h1>
 
       <div>
