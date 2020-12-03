@@ -45,7 +45,7 @@ export const editUserThunk = (newuserdata) => (dispatch, getState) => {
     });
 };
 
-export const fetchUser = (userInfo, location, history) => (dispatch) => {
+export const fetchUser = (userInfo) => (dispatch) => {
   const url = `${process.env.REACT_APP_SERVER_URL}/api/login/`;
   Axios.post(url, userInfo)
     .then((res) => {
@@ -53,14 +53,6 @@ export const fetchUser = (userInfo, location, history) => (dispatch) => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user_id", res.data.user.id);
       dispatch(setUser(res.data));
-      if (location.state) {
-        history.replace(location.state?.from?.pathname);
-        window.location = location.state?.from?.pathname;
-        window.location = "/admin";
-      } else {
-        history.replace("/");
-        window.location = "/";
-      }
     })
     .catch((err) => {
       console.log("====================================");
@@ -96,11 +88,6 @@ export const signUserUp = (userInfo) => (dispatch) => {
 
   Axios.post(url, userInfo)
     .then((res) => {
-      //   localStorage.setItem("token", res.token);
-      //   console.log("====================================");
-      //   console.log(res.user);
-      //   console.log("====================================");
-      //   dispatch(setUser(ress.user));
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user_id", res.data.user.id);
       dispatch(setUser(res.data));

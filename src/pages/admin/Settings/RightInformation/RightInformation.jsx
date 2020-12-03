@@ -16,7 +16,7 @@ import {
   // FormText,
 } from "reactstrap";
 import { connect } from "react-redux";
-import { editUserThunk } from "../../../../store/user/actions";
+import { autoLogin, editUserThunk } from "../../../../store/user/actions";
 
 // const { Dragger } = Upload;
 
@@ -71,25 +71,6 @@ function RightInformation(props) {
           setFieldValue,
           /* and other goodies */
         }) => {
-          // const props = {
-          //   name: "file",
-          //   multiple: true,
-          //   action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
-          //   onChange(info) {
-          //     const { status } = info.file;
-          //     if (status !== "uploading") {
-          //       console.log(info.file.response);
-          //     }
-          //     if (status === "done") {
-          //       message.success(
-          //         `${info.file.name} file uploaded successfully.`
-          //       );
-          //     } else if (status === "error") {
-          //       message.error(`${info.file.name} file upload failed.`);
-          //     }
-          //   },
-          // };
-
           return (
             <Form onSubmit={handleSubmit}>
               <Row>
@@ -191,19 +172,6 @@ function RightInformation(props) {
               </Row>
 
               <div className="mb-3">
-                {/* <Dragger {...props} listType="picture">
-                  <p className="ant-upload-drag-icon">
-                    <InboxOutlined />
-                  </p>
-                  <p className="ant-upload-text">
-                    Click or drag file to this area to upload
-                  </p>
-                  <p className="ant-upload-hint">
-                    Support for a single or bulk upload. Strictly prohibit from
-                    uploading company data or other band files
-                  </p>
-                </Dragger> */}
-
                 <FormGroup>
                   <Label for="image">File Browser with Custom Label</Label>
                   <CustomInput
@@ -239,6 +207,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   editUserThunk,
+  autoLogin,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(RightInformation);
