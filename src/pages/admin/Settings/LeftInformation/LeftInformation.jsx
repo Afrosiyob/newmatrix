@@ -3,8 +3,6 @@ import { Card, Image } from "antd";
 import { connect } from "react-redux";
 
 function LeftInformation(props) {
-  console.log(props.user.user);
-
   if (props && props.user && props.user.user) {
     let user = props.user.user;
 
