@@ -10,35 +10,35 @@
         "signIn": "Sign In",
         "lang": "Lang"
     },
-    "homeAbout":{
-      "Title":"Business Trend Company - this is the community, which includes several areas: High-yield matrix models with training in various trends; Favorable and reliable investment model, justified by trading on the crypto market; Development of own IT-software; Charity at the expense of the Holding. The main idea of the",
-      "Title2":"Holding is to help as many people as possible. For someone it is help in getting rid of work, or in multiplying capital, or in long-term and productive work in a worthy company. For another one - the realization of dreams and goals like traveling, own house, premium cars, additional or remote earnings, and for someone - just gratuitous help via charity.",
-      "Title3":"The main principles of GMMG Holdings are honesty, openness and maximum value for partners. Thousands of people who decided to develop together with us already convinced in this."
+    "homeAbout": {
+        "Title": "Business Trend Company - this is the community, which includes several areas: High-yield matrix models with training in various trends; Favorable and reliable investment model, justified by trading on the crypto market; Development of own IT-software; Charity at the expense of the Holding. The main idea of the",
+        "Title2": "Holding is to help as many people as possible. For someone it is help in getting rid of work, or in multiplying capital, or in long-term and productive work in a worthy company. For another one - the realization of dreams and goals like traveling, own house, premium cars, additional or remote earnings, and for someone - just gratuitous help via charity.",
+        "Title3": "The main principles of GMMG Holdings are honesty, openness and maximum value for partners. Thousands of people who decided to develop together with us already convinced in this."
     },
-    "homeFooter":{
-        "Titul":"Amir Temur street, Tashkent city",
-        "Titul2":"HOME",
-        "Titul3":"About",
-        "Titul4":"Holding Structure",
-        "Titul5":"Pdf-Materials",
-        "Titul6":"Legality",
-        "Titul7":"Contacts",
-        "Titul8":"Payment System",
-        "Titul9":"Write on:",
-        "Titul10":"we help the people"
+    "homeFooter": {
+        "Titul": "Amir Temur street, Tashkent city",
+        "Titul2": "HOME",
+        "Titul3": "About",
+        "Titul4": "Holding Structure",
+        "Titul5": "Pdf-Materials",
+        "Titul6": "Legality",
+        "Titul7": "Contacts",
+        "Titul8": "Payment System",
+        "Titul9": "Write on:",
+        "Titul10": "we help the people"
     },
-    "homeHeader":{
-        "Titul":"Business Trend Company",
-        "Titul2":"Dreams come true with us",
-        "Titul3":"Became partner",
-        "Titul4":"Watch intro",
-        "Titul5":"Pdf-Materials"
+    "homeHeader": {
+        "Titul": "Business Trend Company",
+        "Titul2": "Dreams come true with us",
+        "Titul3": "Became partner",
+        "Titul4": "Watch intro",
+        "Titul5": "Pdf-Materials"
     },
-    "homeReg":{
-        "Titul":"Business Trend Company",
-        "Titul2":"We help the people",
-        "Titul3":"Became partner",
-        "Titul4":"Sign In"
+    "homeReg": {
+        "Titul": "Business Trend Company",
+        "Titul2": "We help the people",
+        "Titul3": "Became partner",
+        "Titul4": "Sign In"
     }
 
 

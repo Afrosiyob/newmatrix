@@ -27,7 +27,7 @@ function TopNavbar({ toggle, collapsed, user }) {
           onClick={toggleLang}
           style={{ marginRight: "15px", textTransform: "uppercase" }}
         >
-          {i18n.language === "uz" ? "ru" : "uz"}
+          {i18n.language === "en" ? "ru" : "uz"}
         </Button>
 
         <p className="font-weight-bold mx-2">
