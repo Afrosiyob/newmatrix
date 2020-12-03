@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Image } from "antd";
+import { Card, Image, Spin } from "antd";
 import { connect } from "react-redux";
 
 function LeftInformation(props) {
@@ -52,7 +52,7 @@ function LeftInformation(props) {
       </div>
     );
   } else {
-    return <div>Page Not Found</div>;
+    return <Spin size="large" />;
   }
 }
 

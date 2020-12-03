@@ -35,8 +35,10 @@ export const editUserThunk = (newuserdata) => (dispatch, getState) => {
     },
   })
     .then((res) => {
+      console.log("yangi rasm");
       console.log(res);
-      dispatch(setUser(res.data));
+
+      dispatch(editUser(res.data));
     })
     .catch((err) => {
       console.log("====================================");

@@ -39,7 +39,7 @@ function RightInformation(props) {
     <Card>
       <Formik
         initialValues={initialValues}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values, { setSubmitting, resetForm }) => {
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
 
@@ -55,7 +55,7 @@ function RightInformation(props) {
             formData.append("qr_code", values.qr_code);
 
             props.editUserThunk(formData);
-
+            resetForm();
             setSubmitting(false);
           }, 400);
         }}
