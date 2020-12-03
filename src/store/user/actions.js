@@ -56,6 +56,7 @@ export const fetchUser = (userInfo, location, history) => (dispatch) => {
       if (location.state) {
         history.replace(location.state?.from?.pathname);
         window.location = location.state?.from?.pathname;
+        window.location = "/admin";
       } else {
         history.replace("/");
         window.location = "/";
@@ -81,7 +82,6 @@ export const logUserOutReal = () => (dispatch) => {
       console.log("====================================");
       console.log(res);
       console.log("====================================");
-
       dispatch(logUserOut());
     })
     .catch((err) => {

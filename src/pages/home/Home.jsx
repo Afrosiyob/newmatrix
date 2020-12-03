@@ -1,5 +1,4 @@
-import Axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 // import { useParams } from "react-router-dom";
 import HomeAbout from "../../layouts/home/HomeAbout/HomeAbout";
 import HomeFooter from "../../layouts/home/HomeFooter/HomeFooter";
@@ -7,10 +6,9 @@ import HomeHeader from "../../layouts/home/HomeHeader/HomeHeader";
 import HomeNavbar from "../../layouts/home/HomeNavbar/HomeNavbar";
 import HomePdf from "../../layouts/home/HomePdf/HomePdf";
 import HomeReg from "../../layouts/home/HomeReg/HomeReg";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "./Home.scss";
 import { connect } from "react-redux";
-import { autoLogin } from "../../store/user/actions";
 
 function Home(props) {
   // const { id, token } = useParams();
@@ -78,4 +76,10 @@ function Home(props) {
   );
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    user: state.userReducer.user,
+  };
+};
+
+export default connect(mapStateToProps, null)(Home);

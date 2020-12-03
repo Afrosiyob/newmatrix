@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "antd/dist/antd.css";
 import "./Admin.scss";
 
+import { Link, Route, Switch } from "react-router-dom";
 import { Layout, Menu } from "antd";
 import {
   HomeOutlined,
@@ -9,16 +10,12 @@ import {
   TeamOutlined,
   BarcodeOutlined,
   RiseOutlined,
-  DingdingOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
 // import { useTranslation } from "react-i18next";
 import SideBarLogo from "../../components/SideBarlogo/SideBarLogo";
 import TopNavbar from "../../components/TopNavbar/TopNavbar";
-import { Link, Route, Switch } from "react-router-dom";
-
 import Team from "./Team/Team";
-import Investment from "./Investment/investment";
 import Settings from "./Settings/Settings";
 import Statistics from "./Statistics/Statistics";
 import Products from "./Products/Products";
@@ -60,11 +57,6 @@ function Admin() {
       icon: <RiseOutlined />,
       text: "Tariflar",
       url: "/admin/tariflar",
-    },
-    {
-      icon: <DingdingOutlined />,
-      text: "My investment",
-      url: "/admin/investment",
     },
     {
       icon: <SettingOutlined />,
@@ -112,7 +104,6 @@ function Admin() {
               <Route path="/admin/team" component={Team} />
               <Route path="/admin/products" component={Products} />
               <Route path="/admin/tariflar" component={Tariflar} />
-              <Route path="/admin/investment" component={Investment} />
               <Route path="/admin/settings" component={Settings} />
             </Switch>
           </main>

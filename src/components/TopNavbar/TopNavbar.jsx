@@ -32,13 +32,13 @@ function TopNavbar({ toggle, collapsed, user }) {
 
         <p className="font-weight-bold mx-2">
           {" "}
-          {user.user.username ? user.user.username : null}{" "}
+          {!user || !user.user ? null : user.user.username}{" "}
         </p>
 
         <Badge count={1}>
           <Avatar
             size={40}
-            src={<Image src={user.user.image ? user.user.image : null} />}
+            src={<Image src={!user || !user.user ? null : user.user.image} />}
           />
         </Badge>
       </div>

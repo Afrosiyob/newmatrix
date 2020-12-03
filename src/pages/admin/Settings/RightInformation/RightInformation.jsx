@@ -155,14 +155,9 @@ function RightInformation(props) {
               <Row>
                 <Col sm="12" md="6" className="mb-3">
                   <FormGroup>
-                    <Label
-                      for="phonenumber"
-                      className="font-weight-bold text-success"
-                    >
-                      phonenumber
-                    </Label>
+                    <Label for="phonenumber">Phonenumber</Label>
                     <Input
-                      className="is-valid"
+                      // className="is-valid"
                       type="text"
                       name="phonenumber"
                       id="phonenumber"
@@ -177,12 +172,12 @@ function RightInformation(props) {
                   <FormGroup>
                     <Label
                       for="abouteme"
-                      className="text-danger font-weight-bold"
+                      // className="text-danger font-weight-bold"
                     >
-                      abouteme
+                      Abouteme
                     </Label>
                     <Input
-                      className="is-invalid"
+                      // className="is-invalid"
                       type="textarea"
                       name="abouteme"
                       id="abouteme"

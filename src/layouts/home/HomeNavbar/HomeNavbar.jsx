@@ -15,6 +15,7 @@ import {
 import Ripples from "react-ripples";
 
 import { Link, animateScroll as scroll } from "react-scroll";
+import { Link as CustomLink } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
 import ModalComponent from "../../../components/ModalComponent/ModalComponent";
@@ -46,7 +47,7 @@ const HomeNavbar = (props) => {
 
   return (
     <Navbar expand="md" light fixed="top" className="shadow-lg home-navbar">
-      <Container>
+      <Container fluid>
         <NavbarBrand
           onClick={() => {
             scrollToTop();
@@ -187,6 +188,11 @@ const HomeNavbar = (props) => {
               >
                 {t(`homeNavbar.contacts`)}
               </Link>
+            </NavItem>
+            <NavItem>
+              <CustomLink className="home-navbar-link" to="/admin">
+                Admin
+              </CustomLink>
             </NavItem>
 
             <NavItem>
