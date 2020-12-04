@@ -20,7 +20,7 @@ export const productReducer = (state = productState, { type, payload }) => {
     case ADD_PRODUCT:
       return {
         ...state,
-        payload,
+        products: [...state, payload],
       };
 
     default:

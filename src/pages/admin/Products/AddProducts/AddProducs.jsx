@@ -41,15 +41,15 @@ function AddProducs(props) {
             setTimeout(() => {
               alert(JSON.stringify(values, null, 2));
               setSubmitting(false);
-              props.addProductThunk(values);
+             
 
               const formData = new FormData();
 
-              formData.append('name', values.product_name);
-              formData.append('description', values.product_description);
-              formData.append('product')
-
-
+              formData.append("name", values.product_name);
+              formData.append("description", values.product_description);
+              formData.append()
+              props.addProductThunk(formData);
+           
             }, 400);
           }}
         >
@@ -61,6 +61,7 @@ function AddProducs(props) {
             handleBlur,
             handleSubmit,
             isSubmitting,
+            setFieldValue,
             /* and other goodies */
           }) => (
             <Form onSubmit={handleSubmit}>
@@ -100,9 +101,9 @@ function AddProducs(props) {
                     name="product"
                     id="product"
                     placeholder="with a placeholder"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.product_description}
+                    onChange={(event) => {
+                      setFieldValue("product", event.currentTarget.files[0]);
+                    }}
                   />
                 </FormGroup>
               </Col>

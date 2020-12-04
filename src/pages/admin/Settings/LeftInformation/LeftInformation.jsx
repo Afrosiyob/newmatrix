@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Image, Spin } from "antd";
+import { Card, Spin } from "antd";
 import { connect } from "react-redux";
 
 function LeftInformation(props) {
@@ -11,11 +11,17 @@ function LeftInformation(props) {
         {" "}
         <Card
           style={{ width: "100%", padding: "10px" }}
-          cover={<Image src={user.image} />}
+          cover={
+            <img
+              src={user.image}
+              style={{ width: "100%", height: "auto" }}
+              alt="avatar"
+            />
+          }
         >
           <div className="user-information">
             <div className="information-item mb-2">
-              <h6 className="text-muted ">Username</h6>
+              <h6 className="text-muted ">Username {user.first_name}</h6>
               <p className="font-weight-bolder ml-2">
                 <i className="fas fa-user text-muted mr-2"></i> {user.username}
               </p>

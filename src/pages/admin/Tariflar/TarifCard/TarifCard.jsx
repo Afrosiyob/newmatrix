@@ -1,21 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Ripples from "react-ripples";
 
 import ClickLogo from "../../../../assets/images/Click.png";
 import PaymeLogo from "../../../../assets/images/payme.png";
 
-import { Menu, Radio, Modal, Button } from "antd";
+import { Radio, Modal, Button } from "antd";
 
 import { connect } from "react-redux";
 import { sendPayment } from "../../../../store/payment/actions";
 
+import { Link } from "react-router-dom";
 import "./TarifCard.scss";
 
 function TarifCard(props) {
   const [modalvisible, setmodalvisible] = useState(false);
+  const [modalvisibletwo, setmodalvisibletwo] = useState(false);
+  const [modalLoadingtwo, setmodalLoadingtwo] = useState(false);
   const [modalLoading, setmodalLoading] = useState(false);
   const [value, setValue] = useState("click");
+
+  console.log(" payment data ====================================");
+  console.log(props.paymentData);
+  console.log("====================================");
 
   const onChange = (e) => {
     setValue(e.target.value);
@@ -34,6 +41,7 @@ function TarifCard(props) {
       formData.append("type", value);
       formData.append("plan_id", props.cardId);
       props.sendPayment(formData);
+      showModaltwo();
     }, 1000);
   };
 
@@ -42,22 +50,21 @@ function TarifCard(props) {
     setmodalvisible(false);
   };
 
-  const clickHandle = (type, id) => {};
+  const showModaltwo = () => {
+    setmodalvisibletwo(true);
+  };
 
-  const menu = (
-    <Menu>
-      <Menu.Item>
-        <button onClick={() => clickHandle("click", props.cardId)}>
-          <img className="img-pay" src={ClickLogo} alt="click logo" />
-        </button>
-      </Menu.Item>
-      <Menu.Item>
-        <Ripples color="rgba(255,255,255,0.5)" className=" rounded-pill">
-          <img className="img-pay" src={PaymeLogo} alt="payme logo" />
-        </Ripples>
-      </Menu.Item>
-    </Menu>
-  );
+  const handleOktwo = () => {
+    setmodalLoadingtwo(true);
+    setTimeout(() => {
+      setmodalvisibletwo(false);
+      setmodalLoadingtwo(false);
+    }, 3000);
+  };
+
+  const handleCanceltwo = () => {
+    setmodalvisibletwo(false);
+  };
 
   return (
     <div className="plans-card-item rounded shadow-lg overflow-hidden d-flex flex-column justify-content-between align-content-center align-items-center">
@@ -84,6 +91,33 @@ function TarifCard(props) {
         {" "}
         Sotib olish{" "}
       </button>
+
+      <Modal
+        visible={modalvisibletwo}
+        title="To'lovni davom ettirish..."
+        onOk={handleOktwo}
+        onCancel={handleCanceltwo}
+        footer={[
+          <Button key="back" onClick={handleCanceltwo}>
+            Bekor qilish
+          </Button>,
+          <a
+            style={{ margin: "0 10px" }}
+            key="submit"
+            type="primary"
+            loading={modalLoadingtwo}
+            onClick={handleOktwo}
+            href={props.paymentData.process_buy_url}
+          >
+            <Button type="primary">To'lovni tasdiqlash</Button>
+          </a>,
+        ]}
+      >
+        <p>
+          {" "}
+          <em> yo'riqnoma</em>{" "}
+        </p>
+      </Modal>
 
       <Modal
         title="To'lov turini tanlash"
@@ -120,25 +154,6 @@ function TarifCard(props) {
         </Radio.Group>
       </Modal>
     </div>
-
-    // <Card
-    //   bordered={false}
-    //   className="rounded d-flex flex-column justify-content-center align-items-center align-content-center rounded tarif-card"
-    // >
-    //   <h3 className="text-center text-muted text-uppercase">
-    //     {" "}
-    //     {props.cardName}{" "}
-    //   </h3>
-    //   <h2 className="text-center font-weight-bold"> {props.cardPrice}</h2>
-
-    //   <div className="w-100 mt-3 d-flex justify-content-between">
-    //     <Dropdown overlay={menu}>
-    //       <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
-    //         Hover me <DownOutlined />
-    //       </a>
-    //     </Dropdown>
-    //   </div>
-    // </Card>
   );
 }
 

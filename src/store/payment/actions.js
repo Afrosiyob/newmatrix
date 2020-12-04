@@ -1,4 +1,13 @@
 import Axios from "axios";
+import { notification } from "antd";
+
+const openNotificationWithIcon = (type) => {
+  notification[type]({
+    message: "Notification Title",
+    description:
+      "This is the content of the notification. This is the content of the notification. This is the content of the notification.",
+  });
+};
 
 export const SET_PAYMENT = "SET_PAYMENT";
 
@@ -10,10 +19,6 @@ export const setPayment = (payload) => {
 };
 
 export const sendPayment = (paymentInfo) => (dispatch) => {
-  // console.log(paymentInfo);
-
-  // dispatch(setPayment(paymentInfo));
-
   const url = `${process.env.REACT_APP_SERVER_URL}/api/buy/`;
 
   Axios.post(url, paymentInfo, {
@@ -25,10 +30,10 @@ export const sendPayment = (paymentInfo) => (dispatch) => {
   })
     .then((res) => {
       //   localStorage.setItem("token", res.token);
-
       dispatch(setPayment(res.data));
+      openNotificationWithIcon("success");
 
-      alert("malumotlar mofaqqiyatli junatildi");
+      // BrowserRouter.push(res.data.process_buy_url);
     })
     .catch((err) => {
       console.log("====================================");

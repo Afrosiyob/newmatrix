@@ -11,6 +11,7 @@ export const setUser = (payload) => {
   };
 };
 
+
 export const logUserOut = () => {
   return {
     type: LOG_OUT,

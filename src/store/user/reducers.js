@@ -15,7 +15,8 @@ export const userReducer = (state = userState, { type, payload }) => {
 
     case EDIT_USER:
       return {
-        user: { ...payload },
+        ...state,
+        user: { ...state.user, ...payload },
       };
     case LOG_OUT:
       localStorage.clear();
