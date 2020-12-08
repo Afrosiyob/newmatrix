@@ -11,7 +11,6 @@ export const productReducer = (state = productState, { type, payload }) => {
         ...state,
         products: payload,
       };
-
     case REMOVE_PRODUCT:
       return {
         ...state,

@@ -1,113 +1,82 @@
 @import '../../../style/AllStyles.scss';
-
 .home-navbar {
     background-color: rgb(232, 241, 255);
-
+    z-index: 3;
     @extend %anim;
-
-
-
-
     span.navbar-text {
         @extend %anim;
-
         @include mQ(768px) {
             width: 100%;
         }
     }
-
     .btn-sign-in {
         border: none;
         outline: none;
         @extend %anim;
         /* Primary / Default */
-
         background: #5F2EEA;
-
         padding: 8px 40px;
         color: white;
         @extend %center;
-
-
         @include mQ(768px) {
             width: 100%;
         }
     }
-
     svg.brand-img {
         width: 100px;
         height: auto;
     }
-
-
-
     li.nav-item {
         @extend %center;
         @extend %anim;
         margin: 0 20px;
-
-
         button.lang-dropdown-btn {
             @extend %center;
             border: none;
             background-color: transparent;
             outline: none;
             color: $textColor;
-
             i {
                 margin-left: 5px;
             }
         }
-
         a.home-navbar-link {
             color: $textColor;
             text-decoration: none;
             @extend %anim;
             border-bottom: 2px solid transparent;
             font-size: 18px;
-
             &:hover {
                 cursor: pointer;
             }
-
             @include mQ(992px) {
                 font-size: 16px;
             }
         }
-
         a.active {
             border-bottom: 2px solid #3B50E0;
         }
-
         @include mQ(992px) {
             margin: 0 10px;
-
         }
-
         @include mQ(768px) {
             justify-content: flex-start;
             margin-bottom: 10px;
         }
-
     }
 }
 
 .dropdown-lang-ul {
-
     // background-color: red;
     li {
         @extend %anim;
-
         width: 80px;
         color: $textColor;
         padding: 5px;
-
-
         &:hover {
             cursor: pointer;
             background-color: #5F2EEA;
             color: white;
         }
-
     }
 }
