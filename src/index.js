@@ -13,6 +13,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-toastify/dist/ReactToastify.css";
+import "react-cool-music-player/dist/index.css";
 // import i18n (needs to be bundled ;))
 import "./i18n";
 import "./index.css";

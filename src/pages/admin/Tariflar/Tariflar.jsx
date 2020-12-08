@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 import { Container, Row, Col } from "reactstrap";
+import AudioComponent from "../../../components/audioPlayer/AudioComponent";
 import TitleHamlet from "../../../components/TitleHamlet/TitleHamlet";
 import { fetchPlans } from "../../../store/plans/actions";
 import TarifCard from "./TarifCard/TarifCard";
@@ -34,6 +35,8 @@ function Tariflar(props) {
           </Col>
         ))}
       </Row>
+
+      <AudioComponent />
     </Container>
   );
 }

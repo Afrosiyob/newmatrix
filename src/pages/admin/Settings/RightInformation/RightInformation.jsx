@@ -41,8 +41,6 @@ function RightInformation(props) {
         initialValues={initialValues}
         onSubmit={(values, { setSubmitting, resetForm }) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-
             let formData = new FormData();
 
             formData.append("first_name", values.ism);

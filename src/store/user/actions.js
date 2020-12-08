@@ -1,4 +1,5 @@
 import Axios from "axios";
+import { openNotificationWithIcon } from "../actions";
 
 export const SET_USER = "SET_USER";
 export const LOG_OUT = "LOG_OUT";
@@ -10,7 +11,6 @@ export const setUser = (payload) => {
     payload,
   };
 };
-
 
 export const logUserOut = () => {
   return {
@@ -40,15 +40,25 @@ export const editUserThunk = (newuserdata) => (dispatch, getState) => {
       console.log(res);
 
       dispatch(editUser(res.data));
+      openNotificationWithIcon(
+        "success",
+        "Xabarnoma",
+        "Kiritilgan ma'lumotlar muffaqiyatli junatildi"
+      );
     })
     .catch((err) => {
       console.log("====================================");
       console.log(err);
       console.log("====================================");
+      openNotificationWithIcon(
+        "error",
+        "Xabarnoma",
+        "Kiritilgan ma'lumotlar muffaqiyatli junatilmadi"
+      );
     });
 };
 
-export const fetchUser = (userInfo) => (dispatch) => {
+export const fetchUser = (userInfo, history) => (dispatch) => {
   const url = `${process.env.REACT_APP_SERVER_URL}/api/login/`;
   Axios.post(url, userInfo)
     .then((res) => {
@@ -56,11 +66,19 @@ export const fetchUser = (userInfo) => (dispatch) => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user_id", res.data.user.id);
       dispatch(setUser(res.data));
+      openNotificationWithIcon(
+        "success",
+        "Xabarnoma",
+        "Kiritilgan ma'lumotlar muffaqiyatli junatildi"
+      );
+      history.push("/admin");
     })
     .catch((err) => {
-      console.log("====================================");
-      console.log(err);
-      console.log("====================================");
+      openNotificationWithIcon(
+        "error",
+        "Xabarnoma",
+        "Kiritilgan ma'lumotlarni junatishlikda xatolik yuz berdi"
+      );
     });
 };
 
@@ -77,6 +95,11 @@ export const logUserOutReal = () => (dispatch) => {
       console.log("====================================");
       console.log(res);
       console.log("====================================");
+      openNotificationWithIcon(
+        "info",
+        "Xabarnoma",
+        "Duvay gaplashamiza uzini asra... XD"
+      );
       dispatch(logUserOut());
     })
     .catch((err) => {
@@ -94,12 +117,21 @@ export const signUserUp = (userInfo) => (dispatch) => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user_id", res.data.user.id);
       dispatch(setUser(res.data));
-      alert("malumotlar mofaqqiyatli junatildi");
+      openNotificationWithIcon(
+        "success",
+        "Xabarnoma",
+        "Kiritilgan ma'lumotlar muffaqiyatli junatildi"
+      );
     })
     .catch((err) => {
       console.log("====================================");
       console.log(err);
       console.log("====================================");
+      openNotificationWithIcon(
+        "error",
+        "Xabarnoma",
+        "Kiritilgan ma'lumotlarni junatishlikda xatolik yuz berdi"
+      );
     });
 };
 
@@ -125,5 +157,6 @@ export const autoLogin = () => (dispatch) => {
       console.log("====================================");
       console.log(err);
       console.log("====================================");
+      openNotificationWithIcon("error", "Xabarnoma", "User kirishda muammo");
     });
 };

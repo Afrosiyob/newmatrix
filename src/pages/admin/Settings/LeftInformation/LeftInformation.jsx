@@ -13,7 +13,7 @@ function LeftInformation(props) {
           style={{ width: "100%", padding: "10px" }}
           cover={
             <img
-              src={user.image}
+              src={props.user.user.image}
               style={{ width: "100%", height: "auto" }}
               alt="avatar"
             />
