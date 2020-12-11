@@ -46,7 +46,7 @@ function StatisticChart() {
         label: "# of Votes",
         data: [12, 99, 3, 5, 2, 3],
         backgroundColor: [
-          "rgba(255, 99, 132, 0.5)",
+          "rgba(255, 99, 132, 0.1)",
           "rgba(54, 162, 235, 0.2)",
           "rgba(255, 206, 86, 0.2)",
           "rgba(75, 192, 192, 0.2)",
