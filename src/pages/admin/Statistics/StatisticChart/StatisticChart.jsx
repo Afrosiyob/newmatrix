@@ -18,7 +18,7 @@ function StatisticChart() {
     scales: {
       xAxes: [
         {
-          gridLines: false,
+          gridLines: true,
           display: true,
           scaleLabel: {
             display: true,
