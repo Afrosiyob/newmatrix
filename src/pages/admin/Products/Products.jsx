@@ -99,6 +99,7 @@ function Products(props) {
   return (
     <Container fluid>
       <TitleHamlet title="Products" />
+
       <h1 className="font-weight-bold w-100 mb-3">Products</h1>
       <h4 className="w-100 text-muted mb-3">Our products</h4>
       <div className="mb-3">
