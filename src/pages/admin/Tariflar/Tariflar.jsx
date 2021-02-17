@@ -9,11 +9,7 @@ import TarifCard from "./TarifCard/TarifCard";
 
 import "./Tariflar.scss";
 
-function Tariflar(props) {
-  useEffect(() => {
-    props.fetchPlans();
-  }, []);
-
+function Tariflar() {
   return (
     <Container fluid>
       <TitleHamlet title="Plans" />
