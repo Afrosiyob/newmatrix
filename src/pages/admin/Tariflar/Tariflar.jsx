@@ -9,7 +9,7 @@ import TarifCard from "./TarifCard/TarifCard";
 
 import "./Tariflar.scss";
 
-function Tariflar() {
+function Tariflar(props) {
   return (
     <Container fluid>
       <TitleHamlet title="Plans" />
